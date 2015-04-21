@@ -143,7 +143,6 @@
 </div>
 <!-- ./页面内容 -->
 
-<div class="clearfix"></div>
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->

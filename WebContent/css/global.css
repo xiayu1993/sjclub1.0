@@ -8,9 +8,9 @@
 	src: url(../fonts/webfont.otf);
 }
 
-/**
+/****************************************
 * 清理css默认样式
-*/
+*****************************************/
 /** 清除内外边距 **/
 body, h1, h2, h3, h4, h5, h6, hr, p, /* structural elements 结构元素 */
 ul, ol, li, /* list elements 列表元素 */
@@ -45,9 +45,9 @@ clear: both;
 height: 0;
 }
 
-/**********
+/*****************************
 * 页面css
-***********/
+******************************/
 /* 页面最小宽度为1200px，且有背景 */
 body{
 	min-width:1200px;
@@ -72,10 +72,19 @@ body{
 	color:#999;
 	margin-left:10px;
 }
+/* 分页标签 */
+.page>li{
+	display:inline;
+	text-align:center;
+	border:1px solid #000;
+	padding:5px;
+}
 
-/**
+
+
+/*******************************
 * index.jsp
-*/
+********************************/
 /* 热点图展示区 */
 .index_show{
 	width:1000px;
@@ -180,3 +189,57 @@ body{
 .index_links a{
 	color:#ff4800;
 }
+
+
+
+/*****************************
+* active.jsp
+******************************/
+/* active-left */
+.active_left{
+	float:left;
+	width:670px;
+}
+.active_active{
+	height:280px;
+}
+.active_active>img{
+	float:left;
+	width:180px;
+	height:240px;
+	background-color:#ccc;
+}
+.active_active>h3{
+	margin-left:185px;
+	padding-left:15px;
+}
+
+/* active-right */
+.active_right{
+	margin-left:700px;
+	width:300px;
+}
+.active_search{
+	margin-bottom:20px;
+}
+.active_search>input{
+	width:300px;
+	height:30px;
+	line-height:25px;
+	color:#ccc;
+}
+.active_news>h3{
+	color:#ff4800;
+	padding-bottom:5px;
+	border-bottom:1px dashed #333;
+}
+.active_news>h3>span{
+	margin-left:10px;
+	font-size:80%;
+}
+.active_news>p{
+	font-size:90%;
+	margin:15px 0;
+}
+
+

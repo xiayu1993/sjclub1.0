@@ -45,10 +45,12 @@
 .header_nav_ul>li>a:hover{
 	background-color:#ff4800;
 	text-decoration:none;
+	color:#fff;
 }
 /* 当前页面时使导航栏相应模块背景变色 */
 .header_active>a{
 	background-color:#ff4800;
+	color:#fff !important;
 }
 #header_nav_login{
 	display:inline-block;
