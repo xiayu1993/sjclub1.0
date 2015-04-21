@@ -1,0 +1,182 @@
+/*********
+* 全局css
+**********/
+
+/* 网站使用的字体，IE下不能使用 */
+@font-face{
+	font-family: 'pan';
+	src: url(../fonts/webfont.otf);
+}
+
+/**
+* 清理css默认样式
+*/
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, /* structural elements 结构元素 */
+ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, button, input, textarea, /* form elements 表单元素 */
+th, td, /* table elements 表格元素 */
+img/* img elements 图片元素 */{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/** 设置默认字体 **/
+body,button, input, select, textarea {
+  font: 16px pan, Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+em{ font-style:normal; }
+/** 重置列表元素 **/
+ul{ list-style: none; }
+/** 重置超链接元素 **/
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+/*清除浮动*/
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+
+/**********
+* 页面css
+***********/
+/* 页面最小宽度为1200px，且有背景 */
+body{
+	min-width:1200px;
+	background-image:url(../img/bg.png);
+}
+/* 页面内容区 */
+.content{
+	width:1000px;
+	margin:20px auto;
+}
+/* 背景为白色，上下为虚线边框，左右无边框的标题 */
+.title_bg{
+	background-color:#fff;
+	border-top:1px dashed #333;
+	border-bottom:1px dashed #333;
+	margin-bottom:15px;
+	padding:10px 0;
+	color:#333;
+}
+.title_bg>span{
+	font-size:80%;
+	color:#999;
+	margin-left:10px;
+}
+
+/**
+* index.jsp
+*/
+/* 热点图展示区 */
+.index_show{
+	width:1000px;
+	text-align:center;
+}
+.index_show_img{
+	float:left;
+	width:680px;
+	height:340px;
+	background-color:#fff;
+}
+.index_show_popularity{
+	/* 两个元素值之和为995px */
+	margin-left:700px;
+	width:295px;
+}
+.index_show_popularity>ol{
+	margin-top:10px;
+	margin-left:65px;
+	text-align:left;
+}
+.index_show_popularity>ol>li{
+	height:20px;
+	margin:8px auto;
+	font-size:90%;
+}
+
+/* 社团活动 */
+.index_active{
+	margin:40px auto;
+}
+.index_active>h3{
+	padding-left:15px;
+}
+.index_active>h3>a{
+	float:right;
+	font-size:90%;
+	color:#ff4800;
+	margin-right:15px;
+}
+.index_active_list{
+	text-align:center;
+}
+.index_active_list>div{
+	display:inline-block;
+	margin:10px 12px;
+	border-bottom:1px dashed #333;
+	background-color:#fff;
+}
+.index_active_list>div>img{
+	background-color:#ccc;
+	/* 此处加载的图片大小应该限制为220px*180px */
+	width:222px;
+	height:180px;
+}
+.index_active_list>div>p{
+	margin:3px 5px;
+	font-size:80%;
+	text-align:left;
+}
+
+.index_active_list>div>p:last-child{
+	font-size:70%;
+	color:#999;
+}
+
+/* 特别推荐 */
+.index_special,
+.index_links{
+	float:left;
+	width:480px;
+}
+.index_special>h3,
+.index_links>h3{
+	padding-left:15px;
+}
+.index_links{
+	margin-left:35px;
+}
+.index_special>img{
+	width:260px;
+	height:160px;
+	float:left;
+	background-color:#ccc;
+}
+.index_special>div{
+	margin-left:280px;
+}
+.index_special>div>h4{
+	margin-bottom:15px;
+	padding-top:10px;
+}
+.index_special>div>p{
+	font-size:80%;
+	line-height:1.8;
+}
+.index_links>div>p{
+	padding-left:20px;
+	font-size:90%;
+	line-height:2;
+}
+.index_links a{
+	color:#ff4800;
+}
