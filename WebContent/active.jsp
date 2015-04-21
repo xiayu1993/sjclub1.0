@@ -21,6 +21,9 @@
 
 <!-- 页面内容 -->
 <div class="content">
+	<div class="page_nav">
+		<h3>社团活动列表<span>club actives lists</span></h3>
+	</div>
 	<!-- 页面左边社团活动 -->
 	<div class="active_left">
 		<div class="active_active">
@@ -134,7 +137,5 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
-<script src="js/jquery.min.js"></script>
-<script src="js/global.js"></script>
 </body>
 </html>

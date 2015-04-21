@@ -72,6 +72,22 @@ body{
 	color:#999;
 	margin-left:10px;
 }
+/* 社团活动和社团列表的面包屑导航 */
+.page_nav{
+	margin-top:-15px;
+	margin-bottom:30px;
+	width:500px;
+}
+.page_nav>h3{
+	padding-bottom:5px;
+	border-bottom:1px dashed #333;
+}
+.page_nav>h3>span{
+	font-size:80%;
+	margin-left:15px;
+	color:#999;
+}
+
 /* 分页标签 */
 .page>li{
 	display:inline;
@@ -201,7 +217,7 @@ body{
 	width:670px;
 }
 .active_active{
-	height:280px;
+	height:270px;
 }
 .active_active>img{
 	float:left;
@@ -242,4 +258,30 @@ body{
 	margin:15px 0;
 }
 
+
+/*****************
+* list.jsp
+******************/
+.club_list{
+	margin-bottom:20px;
+}
+.club_list>div{
+	display:inline-block;
+	width:180px;
+	height:220px;
+	margin-right:15px;
+	background-color:#fff;
+}
+.club_list>div>a>img{
+	width:180px;
+	height:180px;
+	background-color:#ccc;
+}
+.club_list>div>p{
+	font-size:80%;
+	color:#ff4800;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+}
 

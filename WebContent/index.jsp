@@ -146,7 +146,5 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
-<script src="js/jquery.min.js"></script>
-<script src="js/global.js"></script>
 </body>
 </html>
