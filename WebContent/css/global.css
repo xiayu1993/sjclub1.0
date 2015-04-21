@@ -26,7 +26,6 @@ img/* img elements 图片元素 */{
 body,button, input, select, textarea {
   font: 16px pan, Arial, Helvetica, sans-serif;
 }
-h1, h2, h3, h4, h5, h6 { font-size: 100%; }
 em{ font-style:normal; }
 /** 重置列表元素 **/
 ul{ list-style: none; }
@@ -285,3 +284,91 @@ body{
 	line-height:40px;
 }
 
+
+/************************
+* tools.jsp
+************************/
+.tools_h3{
+	margin-top:-20px;
+	text-align:center;
+	color:#666;
+}
+.content_tools{
+	width:1000px;
+	height:420px;
+	margin:10px 0;
+	
+	/* 为之后的四个方块提供基准 */
+	position:relative;
+	top:0;
+	left:0;
+}
+.angle{
+	width:160px;
+	height:160px;
+	line-height:160px;
+	text-align:center;
+	font-size:48px;
+	
+	position:absolute;
+	z-index:1;
+}
+/* 四个方块的颜色 */
+.tong,
+.ping{
+	background-color: #414141;
+	color:#fff;
+}
+.wen,
+.tou{
+	background-color:#ccc;
+	color:#999;
+}
+/* 四个方块的定位 */
+.tong{
+	top:0;
+	left:80px;
+}
+.tou{
+	top:160px;
+	left:80px;
+}
+.wen{
+	top:80px;
+	left:760px;
+}
+.ping{
+	top:260px;
+	left:760px;
+}
+/* 方块四个角 */
+.angle-span{
+	height:0;
+	width:0;
+	border-width:80px;
+	border-style:solid;
+	border-color: transparent;
+	
+	position:absolute;
+	z-index:2;
+}
+.span-left-top{
+	top:0;
+	left:-80px;
+	border-top-color:#fff;
+}
+.span-right-top{
+	top:0;
+	left:80px;
+	border-top-color:#fff;
+}
+.span-left-bottom{
+	top:0;
+	left:-80px;
+	border-bottom-color:#fff;
+}
+.span-right-bottom{
+	top:0;
+	left:80px;
+	border-bottom-color:#fff;
+}

@@ -80,7 +80,7 @@
         <li<%if(pageName.equals("sjclub_index.jsp")){ //class前要空一格%> class="header_active"<%} %>><a href="index.jsp">网站首页</a></li>
         <li<%if(pageName.equals("sjclub_active.jsp")){ %> class="header_active"<%} %>><a href="active.jsp">社团活动</a></li>
         <li<%if(pageName.equals("sjclub_list.jsp")){ %> class="header_active"<%} %>><a href="list.jsp">社团列表</a></li>
-        <li<%if(pageName.equals("sjclub_utility.jsp")){ %> class="header_active"<%} %>><a href="utility.jsp">实用工具</a></li>
+        <li<%if(pageName.equals("sjclub_tools.jsp")){ %> class="header_active"<%} %>><a href="tools.jsp">实用工具</a></li>
         <li<%if(pageName.equals("sjclub_about.jsp")){ %> class="header_active"<%} %>><a href="about.jsp">关于我们</a></li>
 		<li style="width:40px;"></li>
 	</ul>
