@@ -22,7 +22,7 @@
 <!-- 页面内容 -->
 <div class="content">
 	<!-- 页面左边内容 -->
-	<div class="about_left">
+	<div class="content_left about_left">
 		<h3 class="title_bg">江汉大学社团平台</h3>
 		<p>江汉大学<span class="span_2">社团平台</span>是</p>
 		<p>由<span class="span_1">视界网络新媒体社团</span>设计并推出的</p>
@@ -38,9 +38,9 @@
 	<!-- ./页面左边内容 -->
 	
 	<!-- 页面右边内容 -->
-	<div class="about_right">
-		<div class="about_thanks">
-			<h4>特别鸣谢<span>thanks</span></h4>
+	<div class="content_right about_right">
+		<div class="page_right_content about_thanks">
+			<h3>特别鸣谢<span>thanks</span></h3>
 			<p>XXXXXXXXXXXXXXXXXXX</p>
 			<p>XXXXXXXXXXXXXXXXXXX</p>
 			<p>XXXXXXXXXXXXXXXXXXX</p>

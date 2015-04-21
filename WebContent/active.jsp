@@ -25,7 +25,7 @@
 		<h3>社团活动列表<span>club actives lists</span></h3>
 	</div>
 	<!-- 页面左边社团活动 -->
-	<div class="active_left">
+	<div class="content_left active_left">
 		<div class="active_active">
 			<img src="#">
 			<h3 class="title_bg">社团活动名称</h3>
@@ -114,11 +114,11 @@
 	<!-- ./页面左边社团活动 -->
 	
 	<!-- 页面右边社团活动 -->
-	<div class="active_right">
-		<div class="active_search">
+	<div class="content_right active_right">
+		<div class="search">
 			<input type="text" value="搜索你感兴趣的活动">
 		</div>
-		<div class="active_news">
+		<div class="page_right_content">
 			<h3>新闻资讯<span>news</span></h3>
 			<p>新闻新闻新闻新闻新闻</p>
 			<p>新闻新闻新闻新闻新闻</p>

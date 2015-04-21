@@ -99,6 +99,43 @@ body{
 	padding:5px;
 }
 
+/* 社团列表详情页和社团活动列表页的搜索栏 */
+.search{
+	margin-bottom:20px;
+}
+.search>input{
+	width:300px;
+	height:30px;
+	line-height:25px;
+	color:#ccc;
+}
+
+/* 社团活动列表页，社团详情页，关于我们三个页面中左右分页 */
+.content_left{
+	float:left;
+	width:670px;
+}
+.content_right{
+	margin-left:700px;
+	width:300px;
+}
+
+
+/* 社团活动列表页，社团详情页，关于我们三个页面中右边标题以及内容 */
+.page_right_content>h3{
+	color:#ff4800;
+	padding-bottom:5px;
+	border-bottom:1px dashed #333;
+}
+.page_right_content>h3>span{
+	margin-left:10px;
+	font-size:80%;
+}
+.page_right_content>p{
+	font-size:90%;
+	margin:15px 0;
+}
+
 
 
 /*******************************
@@ -215,10 +252,6 @@ body{
 * active.jsp
 ******************************/
 /* active-left */
-.active_left{
-	float:left;
-	width:670px;
-}
 .active_active{
 	height:270px;
 }
@@ -231,34 +264,6 @@ body{
 .active_active>h3{
 	margin-left:185px;
 	padding-left:15px;
-}
-
-/* active-right */
-.active_right{
-	margin-left:700px;
-	width:300px;
-}
-.active_search{
-	margin-bottom:20px;
-}
-.active_search>input{
-	width:300px;
-	height:30px;
-	line-height:25px;
-	color:#ccc;
-}
-.active_news>h3{
-	color:#ff4800;
-	padding-bottom:5px;
-	border-bottom:1px dashed #333;
-}
-.active_news>h3>span{
-	margin-left:10px;
-	font-size:80%;
-}
-.active_news>p{
-	font-size:90%;
-	margin:15px 0;
 }
 
 
@@ -382,42 +387,10 @@ body{
 * about.jsp
 ******************************/
 /* about-left */
-.about_left{
-	float:left;
-	width:670px;
-}
 .about_left>h3{
 	text-align:center;
 	color:#666;
 }
-
-/* about-right */
-.about_right{
-	margin-left:700px;
-	width:300px;
-}
-.about_thanks{
-	/* 使其与左边底部对齐 */
-	padding-top:18px;
-}
-.about_thanks>h4{
-	color:#ff4800;
-	padding-bottom:5px;
-	border-bottom:1px dashed #333;
-}
-.about_thanks>h4>span{
-	margin-left:10px;
-	font-size:80%;
-}
-.about_thanks>p{
-	font-size:80%;
-	margin:15px 0;
-}
-
-
-/************************
-* about.jsp
-*************************/
 .about_left>p{
 	line-height:2.2;
 	color:#777;
@@ -431,6 +404,12 @@ body{
 }
 .span_3{
 	font-size:125%;
+}
+
+/* about-right */
+.about_thanks{
+	/* 使其与左边底部对齐 */
+	padding-top:15px;
 }
 
 
@@ -482,3 +461,31 @@ body{
 	position:relative;
 	top:-5px;
 }
+
+
+/***********************************
+* listDetail.jsp
+************************************/
+/* listDetail-left */
+.listDetail_content>h2{
+	text-align:center;
+	color:#333;
+	margin-top:-10px;
+	margin-bottom:20px;
+}
+.listDetail_content>p{
+	font-size:90%;
+	line-height:1.5;
+	
+	/* 为了让底部版权栏到页面最底部所以设置最短的内容长度 */
+	min-height:250px;
+}
+.listDetail_info{
+	margin-top:50px;
+}
+.listDetail_info>p{
+	color:#ff4800;
+	font-size:80%;
+	padding-left:5px;
+}
+
