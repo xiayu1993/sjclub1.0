@@ -47,45 +47,22 @@
 		<h3 class="title_bg">社团活动<span>club activities</span><a href="#"><span>更多>></span></a></h3>
 		<div class="index_active_list">
 			<div>
-				<img src="#">
+				<a href="#"><img src="#"></a>
 				<p>社团活动名称</p>
 				<p>活动截止时间：xxxx年xx月xx日</p>
 			</div>
 			<div>
-				<img src="#">
+				<a href="#"><img src="#"></a>
 				<p>社团活动名称</p>
 				<p>活动截止时间：xxxx年xx月xx日</p>
 			</div>
 			<div>
-				<img src="#">
+				<a href="#"><img src="#"></a>
 				<p>社团活动名称</p>
 				<p>活动截止时间：xxxx年xx月xx日</p>
 			</div>
 			<div>
-				<img src="#">
-				<p>社团活动名称</p>
-				<p>活动截止时间：xxxx年xx月xx日</p>
-			</div>
-		</div>
-		
-		<div class="index_active_list">
-			<div>
-				<img src="#">
-				<p>社团活动名称</p>
-				<p>活动截止时间：xxxx年xx月xx日</p>
-			</div>
-			<div>
-				<img src="#">
-				<p>社团活动名称</p>
-				<p>活动截止时间：xxxx年xx月xx日</p>
-			</div>
-			<div>
-				<img src="#">
-				<p>社团活动名称</p>
-				<p>活动截止时间：xxxx年xx月xx日</p>
-			</div>
-			<div>
-				<img src="#">
+				<a href="#"><img src="#"></a>
 				<p>社团活动名称</p>
 				<p>活动截止时间：xxxx年xx月xx日</p>
 			</div>
@@ -93,22 +70,45 @@
 		
 		<div class="index_active_list">
 			<div>
-				<img src="#">
+				<a href="#"><img src="#"></a>
 				<p>社团活动名称</p>
 				<p>活动截止时间：xxxx年xx月xx日</p>
 			</div>
 			<div>
-				<img src="#">
+				<a href="#"><img src="#"></a>
 				<p>社团活动名称</p>
 				<p>活动截止时间：xxxx年xx月xx日</p>
 			</div>
 			<div>
-				<img src="#">
+				<a href="#"><img src="#"></a>
 				<p>社团活动名称</p>
 				<p>活动截止时间：xxxx年xx月xx日</p>
 			</div>
 			<div>
-				<img src="#">
+				<a href="#"><img src="#"></a>
+				<p>社团活动名称</p>
+				<p>活动截止时间：xxxx年xx月xx日</p>
+			</div>
+		</div>
+		
+		<div class="index_active_list">
+			<div>
+				<a href="#"><img src="#"></a>
+				<p>社团活动名称</p>
+				<p>活动截止时间：xxxx年xx月xx日</p>
+			</div>
+			<div>
+				<a href="#"><img src="#"></a>
+				<p>社团活动名称</p>
+				<p>活动截止时间：xxxx年xx月xx日</p>
+			</div>
+			<div>
+				<a href="#"><img src="#"></a>
+				<p>社团活动名称</p>
+				<p>活动截止时间：xxxx年xx月xx日</p>
+			</div>
+			<div>
+				<a href="#"><img src="#"></a>
 				<p>社团活动名称</p>
 				<p>活动截止时间：xxxx年xx月xx日</p>
 			</div>

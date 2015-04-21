@@ -86,6 +86,10 @@ body{
 	margin-left:15px;
 	color:#999;
 }
+.page_nav>h3>span:last-child{
+	color:#ff4800;
+	font-size:70%;
+}
 
 /* 分页标签 */
 .page>li{
@@ -149,7 +153,7 @@ body{
 	border-bottom:1px dashed #333;
 	background-color:#fff;
 }
-.index_active_list>div>img{
+.index_active_list>div>a>img{
 	background-color:#ccc;
 	/* 此处加载的图片大小应该限制为220px*180px */
 	width:222px;
@@ -371,4 +375,110 @@ body{
 	top:0;
 	left:80px;
 	border-bottom-color:#fff;
+}
+
+
+/*****************************
+* about.jsp
+******************************/
+/* about-left */
+.about_left{
+	float:left;
+	width:670px;
+}
+.about_left>h3{
+	text-align:center;
+	color:#666;
+}
+
+/* about-right */
+.about_right{
+	margin-left:700px;
+	width:300px;
+}
+.about_thanks{
+	/* 使其与左边底部对齐 */
+	padding-top:18px;
+}
+.about_thanks>h4{
+	color:#ff4800;
+	padding-bottom:5px;
+	border-bottom:1px dashed #333;
+}
+.about_thanks>h4>span{
+	margin-left:10px;
+	font-size:80%;
+}
+.about_thanks>p{
+	font-size:80%;
+	margin:15px 0;
+}
+
+
+/************************
+* about.jsp
+*************************/
+.about_left>p{
+	line-height:2.2;
+	color:#777;
+	letter-spacing:2px;
+}
+.span_1{
+	font-size:200%;
+}
+.span_2{
+	font-size:150%;
+}
+.span_3{
+	font-size:125%;
+}
+
+
+/**************************
+* activeDetail.jsp
+***************************/
+.activeDetail_img{
+	width:480px;
+	height:550px;
+	padding:8px;
+	background-color:#fff;
+	border:1px solid #aaa;
+	float:left;
+}
+.activeDetail_img>img{
+	width:480px;
+	height:550px;
+	background-color:#ccc;
+}
+
+.activeDetail_content,
+.activeDetail_info{
+	margin-left:530px;
+	color:#333;
+}
+.activeDetail_content>h2{
+	text-align:center;
+	margin-bottom:5px;
+}
+.activeDetail_content>p{
+	font-size:90%;
+	line-height:1.5;
+}
+.activeDetail_info{
+	margin-top:20px;
+}
+.activeDetail_info>p{
+	margin:10px 0;
+	padding-bottom:5px;
+	font-size:80%;
+	border-bottom:1px dashed #333;
+}
+.activeDetail_info button{
+	float:right;
+	margin-right:20px;
+	font-size:14px;
+	color:#ff4800;
+	
+	position:relative;
+	top:-5px;
 }
