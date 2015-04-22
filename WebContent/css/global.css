@@ -1,0 +1,491 @@
+/*********
+* 全局css
+**********/
+
+/* 网站使用的字体，IE下不能使用 */
+@font-face{
+	font-family: 'pan';
+	src: url(../fonts/webfont.otf);
+}
+
+/****************************************
+* 清理css默认样式
+*****************************************/
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, /* structural elements 结构元素 */
+ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, button, input, textarea, /* form elements 表单元素 */
+th, td, /* table elements 表格元素 */
+img/* img elements 图片元素 */{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/** 设置默认字体 **/
+body,button, input, select, textarea {
+  font: 16px pan, Arial, Helvetica, sans-serif;
+}
+em{ font-style:normal; }
+/** 重置列表元素 **/
+ul{ list-style: none; }
+/** 重置超链接元素 **/
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+/*清除浮动*/
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+
+/*****************************
+* 页面css
+******************************/
+/* 页面最小宽度为1200px，且有背景 */
+body{
+	min-width:1200px;
+	background-image:url(../img/bg.png);
+}
+/* 页面内容区 */
+.content{
+	width:1000px;
+	margin:20px auto;
+}
+/* 背景为白色，上下为虚线边框，左右无边框的标题 */
+.title_bg{
+	background-color:#fff;
+	border-top:1px dashed #333;
+	border-bottom:1px dashed #333;
+	margin-bottom:15px;
+	padding:10px 0;
+	color:#333;
+}
+.title_bg>span{
+	font-size:80%;
+	color:#999;
+	margin-left:10px;
+}
+/* 社团活动和社团列表的面包屑导航 */
+.page_nav{
+	margin-top:-15px;
+	margin-bottom:30px;
+	width:500px;
+}
+.page_nav>h3{
+	padding-bottom:5px;
+	border-bottom:1px dashed #333;
+}
+.page_nav>h3>span{
+	font-size:80%;
+	margin-left:15px;
+	color:#999;
+}
+.page_nav>h3>span:last-child{
+	color:#ff4800;
+	font-size:70%;
+}
+
+/* 分页标签 */
+.page>li{
+	display:inline;
+	text-align:center;
+	border:1px solid #000;
+	padding:5px;
+}
+
+/* 社团列表详情页和社团活动列表页的搜索栏 */
+.search{
+	margin-bottom:20px;
+}
+.search>input{
+	width:300px;
+	height:30px;
+	line-height:25px;
+	color:#ccc;
+}
+
+/* 社团活动列表页，社团详情页，关于我们三个页面中左右分页 */
+.content_left{
+	float:left;
+	width:670px;
+}
+.content_right{
+	margin-left:700px;
+	width:300px;
+}
+
+
+/* 社团活动列表页，社团详情页，关于我们三个页面中右边标题以及内容 */
+.page_right_content>h3{
+	color:#ff4800;
+	padding-bottom:5px;
+	border-bottom:1px dashed #333;
+}
+.page_right_content>h3>span{
+	margin-left:10px;
+	font-size:80%;
+}
+.page_right_content>p{
+	font-size:90%;
+	margin:15px 0;
+}
+
+
+
+/*******************************
+* index.jsp
+********************************/
+/* 热点图展示区 */
+.index_show{
+	width:1000px;
+	text-align:center;
+}
+.index_show_img{
+	float:left;
+	width:680px;
+	height:340px;
+	background-color:#fff;
+}
+.index_show_popularity{
+	/* 两个元素值之和为995px */
+	margin-left:700px;
+	width:295px;
+}
+.index_show_popularity>ol{
+	margin-top:10px;
+	margin-left:65px;
+	text-align:left;
+}
+.index_show_popularity>ol>li{
+	height:20px;
+	margin:8px auto;
+	font-size:90%;
+}
+
+/* 社团活动 */
+.index_active{
+	margin:40px auto;
+}
+.index_active>h3{
+	padding-left:15px;
+}
+.index_active>h3>a{
+	float:right;
+	font-size:90%;
+	color:#ff4800;
+	margin-right:15px;
+}
+.index_active_list{
+	text-align:center;
+}
+.index_active_list>div{
+	display:inline-block;
+	margin:10px 12px;
+	border-bottom:1px dashed #333;
+	background-color:#fff;
+}
+.index_active_list>div>a>img{
+	background-color:#ccc;
+	/* 此处加载的图片大小应该限制为220px*180px */
+	width:222px;
+	height:180px;
+}
+.index_active_list>div>p{
+	margin:3px 5px;
+	font-size:80%;
+	text-align:left;
+}
+
+.index_active_list>div>p:last-child{
+	font-size:70%;
+	color:#999;
+}
+
+/* 特别推荐 */
+.index_special,
+.index_links{
+	float:left;
+	width:480px;
+}
+.index_special>h3,
+.index_links>h3{
+	padding-left:15px;
+}
+.index_links{
+	margin-left:35px;
+}
+.index_special>img{
+	width:260px;
+	height:160px;
+	float:left;
+	background-color:#ccc;
+}
+.index_special>div{
+	margin-left:280px;
+}
+.index_special>div>h4{
+	margin-bottom:15px;
+	padding-top:10px;
+}
+.index_special>div>p{
+	font-size:80%;
+	line-height:1.8;
+}
+.index_links>div>p{
+	padding-left:20px;
+	font-size:90%;
+	line-height:2;
+}
+.index_links a{
+	color:#ff4800;
+}
+
+
+
+/*****************************
+* active.jsp
+******************************/
+/* active-left */
+.active_active{
+	height:270px;
+}
+.active_active>img{
+	float:left;
+	width:180px;
+	height:240px;
+	background-color:#ccc;
+}
+.active_active>h3{
+	margin-left:185px;
+	padding-left:15px;
+}
+
+
+/*****************
+* list.jsp
+******************/
+.club_list{
+	margin-bottom:20px;
+}
+.club_list>div{
+	display:inline-block;
+	width:180px;
+	height:220px;
+	margin-right:15px;
+	background-color:#fff;
+}
+.club_list>div>a>img{
+	width:180px;
+	height:180px;
+	background-color:#ccc;
+}
+.club_list>div>p{
+	font-size:80%;
+	color:#ff4800;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+}
+
+
+/************************
+* tools.jsp
+************************/
+.tools_h3{
+	margin-top:-20px;
+	text-align:center;
+	color:#666;
+}
+.content_tools{
+	width:1000px;
+	height:420px;
+	margin:10px 0;
+	
+	/* 为之后的四个方块提供基准 */
+	position:relative;
+	top:0;
+	left:0;
+}
+.angle{
+	width:160px;
+	height:160px;
+	line-height:160px;
+	text-align:center;
+	font-size:48px;
+	
+	position:absolute;
+	z-index:1;
+}
+/* 四个方块的颜色 */
+.tong,
+.ping{
+	background-color: #414141;
+	color:#fff;
+}
+.wen,
+.tou{
+	background-color:#ccc;
+	color:#999;
+}
+/* 四个方块的定位 */
+.tong{
+	top:0;
+	left:80px;
+}
+.tou{
+	top:160px;
+	left:80px;
+}
+.wen{
+	top:80px;
+	left:760px;
+}
+.ping{
+	top:260px;
+	left:760px;
+}
+/* 方块四个角 */
+.angle-span{
+	height:0;
+	width:0;
+	border-width:80px;
+	border-style:solid;
+	border-color: transparent;
+	
+	position:absolute;
+	z-index:2;
+}
+.span-left-top{
+	top:0;
+	left:-80px;
+	border-top-color:#fff;
+}
+.span-right-top{
+	top:0;
+	left:80px;
+	border-top-color:#fff;
+}
+.span-left-bottom{
+	top:0;
+	left:-80px;
+	border-bottom-color:#fff;
+}
+.span-right-bottom{
+	top:0;
+	left:80px;
+	border-bottom-color:#fff;
+}
+
+
+/*****************************
+* about.jsp
+******************************/
+/* about-left */
+.about_left>h3{
+	text-align:center;
+	color:#666;
+}
+.about_left>p{
+	line-height:2.2;
+	color:#777;
+	letter-spacing:2px;
+}
+.span_1{
+	font-size:200%;
+}
+.span_2{
+	font-size:150%;
+}
+.span_3{
+	font-size:125%;
+}
+
+/* about-right */
+.about_thanks{
+	/* 使其与左边底部对齐 */
+	padding-top:15px;
+}
+
+
+/**************************
+* activeDetail.jsp
+***************************/
+.activeDetail_img{
+	width:480px;
+	height:550px;
+	padding:8px;
+	background-color:#fff;
+	border:1px solid #aaa;
+	float:left;
+}
+.activeDetail_img>img{
+	width:480px;
+	height:550px;
+	background-color:#ccc;
+}
+
+.activeDetail_content,
+.activeDetail_info{
+	margin-left:530px;
+	color:#333;
+}
+.activeDetail_content>h2{
+	text-align:center;
+	margin-bottom:5px;
+}
+.activeDetail_content>p{
+	font-size:90%;
+	line-height:1.5;
+}
+.activeDetail_info{
+	margin-top:20px;
+}
+.activeDetail_info>p{
+	margin:10px 0;
+	padding-bottom:5px;
+	font-size:80%;
+	border-bottom:1px dashed #333;
+}
+.activeDetail_info button{
+	float:right;
+	margin-right:20px;
+	font-size:14px;
+	color:#ff4800;
+	
+	position:relative;
+	top:-5px;
+}
+
+
+/***********************************
+* listDetail.jsp
+************************************/
+/* listDetail-left */
+.listDetail_content>h2{
+	text-align:center;
+	color:#333;
+	margin-top:-10px;
+	margin-bottom:20px;
+}
+.listDetail_content>p{
+	font-size:90%;
+	line-height:1.5;
+	
+	/* 为了让底部版权栏到页面最底部所以设置最短的内容长度 */
+	min-height:250px;
+}
+.listDetail_info{
+	margin-top:50px;
+}
+.listDetail_info>p{
+	color:#ff4800;
+	font-size:80%;
+	padding-left:5px;
+}
+
