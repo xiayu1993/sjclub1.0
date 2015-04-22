@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
-    	//获取当前页面的名字
-    	String pageName = request.getParameter("pagename");
-    %>
 <style>
 .header_nav{
 	width:1000px;
@@ -77,11 +73,11 @@
 	<img src="img/jhdx.png">
 	<ul class="header_nav_ul title_bg">
 		<%--获取相应的页面后使其变黑 --%>
-        <li<%if(pageName.equals("sjclub_index.jsp")){ //class前要空一格%> class="header_active"<%} %>><a href="index.jsp">网站首页</a></li>
-        <li<%if(pageName.equals("sjclub_active.jsp")){ %> class="header_active"<%} %>><a href="active.jsp">社团活动</a></li>
-        <li<%if(pageName.equals("sjclub_list.jsp")){ %> class="header_active"<%} %>><a href="list.jsp">社团列表</a></li>
-        <li<%if(pageName.equals("sjclub_tools.jsp")){ %> class="header_active"<%} %>><a href="tools.jsp">实用工具</a></li>
-        <li<%if(pageName.equals("sjclub_about.jsp")){ %> class="header_active"<%} %>><a href="about.jsp">关于我们</a></li>
+        <li><a href="index.jsp">网站首页</a></li>
+        <li><a href="active.jsp">社团活动</a></li>
+        <li><a href="list.jsp">社团列表</a></li>
+        <li><a href="tools.jsp">实用工具</a></li>
+        <li><a href="about.jsp">关于我们</a></li>
 		<li style="width:40px;"></li>
 	</ul>
 	<ul id="header_nav_login">

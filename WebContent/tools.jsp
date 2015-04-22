@@ -14,45 +14,37 @@
 </head>
 <body>
 <!-- 页面头部 -->
-<jsp:include page="globalpart/header.jsp">
-	<jsp:param name="pagename" value="sjclub_tools.jsp" />
-</jsp:include>
+<%@include file="globalpart/header.jsp" %>
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
-<div class="content">
+<div class="content" id="sjclub_tools">
 	<h3 class="title_bg tools_h3">小工具解决大烦恼</h3>
-	<div class="content_tools">
-		<div class="angle tong">
-			统
-			<span class="angle-span span-left-top"></span>
-			<span class="angle-span span-right-top"></span>
-			<span class="angle-span span-left-bottom"></span>
-			<span class="angle-span span-right-bottom"></span>
+	<div class="tools_content">
+		<img src="img/tools1.png" id="tools1_png">
+		<img src="img/tools2.png" id="tools2_png">
+		<div id="tools_content_1">
+			<h2>统计工具</h2>
+			<p>使用在线统计的方式，它自动帮您汇总数据</p>
 		</div>
-
-		<div class="angle tou">
-			投
-			<span class="angle-span span-left-top"></span>
-			<span class="angle-span span-right-top"></span>
-			<span class="angle-span span-left-bottom"></span>
-			<span class="angle-span span-right-bottom"></span>
+		
+		<div id="tools_content_2">
+			<h2>问卷工具</h2>
+			<p>不用再派发纸质问卷啦！您只用发布URL地址即可</p>
 		</div>
-
-		<div class="angle wen">
-			问
-			<span class="angle-span span-left-top"></span>
-			<span class="angle-span span-right-top"></span>
-			<span class="angle-span span-left-bottom"></span>
-			<span class="angle-span span-right-bottom"></span>
+		
+		<div id="tools_content_3">
+			<h2>投票工具</h2>
+			<p>想要创建投票活动？相信它能助您一臂之力</p>
 		</div>
-
-		<div class="angle ping">
-			评
-			<span class="angle-span span-left-top"></span>
-			<span class="angle-span span-right-top"></span>
-			<span class="angle-span span-left-bottom"></span>
-			<span class="angle-span span-right-bottom"></span>
+		
+		<div id="tools_content_4">
+			<h2>评分工具</h2>
+			<p>评分还要用笔来算？让它来给您计算吧</p>
+		</div>
+		
+		<div id="tools_content_5">
+			<p><a href="#">快来试一试吧</a></p>
 		</div>
 	</div>
 </div>
@@ -61,5 +53,11 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".header_nav_ul>li:eq(3)").addClass("header_active")
+})
+</script>
 </body>
 </html>

@@ -14,13 +14,11 @@
 </head>
 <body>
 <!-- 页面头部 -->
-<jsp:include page="globalpart/header.jsp">
-	<jsp:param name="pagename" value="sjclub_index.jsp" />
-</jsp:include>
+<%@include file="globalpart/header.jsp" %>
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
-<div class="content">
+<div class="content" id="sjclub_index">
 	<!-- 热点图展示区 -->
 	<div class="index_show  clearfix">
 		<div class="index_show_img"></div>
@@ -146,5 +144,11 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".header_nav_ul>li:eq(0)").addClass("header_active")
+})
+</script>
 </body>
 </html>

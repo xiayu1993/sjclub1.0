@@ -14,15 +14,13 @@
 </head>
 <body>
 <!-- 页面头部 -->
-<jsp:include page="globalpart/header.jsp">
-	<jsp:param name="pagename" value="sjclub_active.jsp" />
-</jsp:include>
+<%@include file="globalpart/header.jsp" %>
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
-<div class="content">
+<div class="content" id="sjclub_active">
 	<div class="page_nav">
-		<h3>社团活动列表<span>club actives lists</span><span>>>活动详情</span></h3>
+		<h3>社团活动列表<span>club actives lists</span><span>&gt;&gt;活动详情</span></h3>
 	</div>
 	<div>
 		<div class="activeDetail_img"><img src="#"></div>
@@ -36,7 +34,7 @@
 		<div class="activeDetail_info">
 			<p>活动时间：<span>xxxx年xx月xx日</span></p>
 			<p>活动地点：<span>xxxxx</span></p>
-			<p>举办单位：<span>xxxxxxxxxxx</span><button type="button">我要参加</button></p>
+			<p>举办单位：<span>xxxxxxxxxxx</span><a href="#" class="button">我要参加</a></p>
 		</div>
 	</div>
 </div>
@@ -45,5 +43,11 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".header_nav_ul>li:eq(1)").addClass("header_active")
+})
+</script>
 </body>
 </html>

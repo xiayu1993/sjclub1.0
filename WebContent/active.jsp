@@ -14,9 +14,7 @@
 </head>
 <body>
 <!-- 页面头部 -->
-<jsp:include page="globalpart/header.jsp">
-	<jsp:param name="pagename" value="sjclub_active.jsp" />
-</jsp:include>
+<%@include file="globalpart/header.jsp" %>
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
@@ -28,86 +26,106 @@
 	<div class="content_left active_left">
 		<div class="active_active">
 			<img src="#">
-			<h3 class="title_bg">社团活动名称</h3>
-			<pre>
-				aaa
-				bbb
-				ccc
-				ddd
-				eee
-			</pre>
-			<button type="button">查看详情</button>
-			<button type="button">参加活动</button>
-			<p>
-				<span>xxxx年xx月xx日</span>
-				<span>地点地点地点</span>
-				<span>社团名称社团名称</span>
-			</p>
+			<div>
+				<h3 class="title_bg">社团活动名称</h3>
+				<p class="active_active_content">
+					aaa
+					bbb
+					ccc
+					ddd
+					eee
+				</p>
+				<p>
+					<a href="activeDetail.jsp" class="button">查看详情</a>
+					<a href="activeDetail.jsp" class="button">参加活动</a>
+				</p>
+				<p>
+					<img src="img/active1.png"><span>xxxx年xx月xx日</span>
+					<img src="img/active2.png"><span>地点地点地点</span>
+					<img src="img/active3.png"><span>社团名称社团名称</span>
+				</p>
+			</div>
 		</div>
 		
 		<div class="active_active">
 			<img src="#">
-			<h3 class="title_bg">社团活动名称</h3>
-			<pre>
-				aaa
-				bbb
-				ccc
-				ddd
-				eee
-			</pre>
-			<button type="button">查看详情</button>
-			<button type="button">参加活动</button>
-			<p>
-				<span>xxxx年xx月xx日</span>
-				<span>地点地点地点</span>
-				<span>社团名称社团名称</span>
-			</p>
+			<div>
+				<h3 class="title_bg">社团活动名称</h3>
+				<p class="active_active_content">
+					aaa
+					bbb
+					ccc
+					ddd
+					eee
+				</p>
+				<p>
+					<a href="activeDetail.jsp" class="button">查看详情</a>
+					<a href="activeDetail.jsp" class="button">参加活动</a>
+				</p>
+				<p>
+					<img src="img/active1.png"><span>xxxx年xx月xx日</span>
+					<img src="img/active2.png"><span>地点地点地点</span>
+					<img src="img/active3.png"><span>社团名称社团名称</span>
+				</p>
+			</div>
 		</div>
 		
 		<div class="active_active">
 			<img src="#">
-			<h3 class="title_bg">社团活动名称</h3>
-			<pre>
-				aaa
-				bbb
-				ccc
-				ddd
-				eee
-			</pre>
-			<button type="button">查看详情</button>
-			<button type="button">参加活动</button>
-			<p>
-				<span>xxxx年xx月xx日</span>
-				<span>地点地点地点</span>
-				<span>社团名称社团名称</span>
-			</p>
+			<div>
+				<h3 class="title_bg">社团活动名称</h3>
+				<p class="active_active_content">
+					aaa
+					bbb
+					ccc
+					ddd
+					eee
+				</p>
+				<p>
+					<a href="activeDetail.jsp" class="button">查看详情</a>
+					<a href="activeDetail.jsp" class="button">参加活动</a>
+				</p>
+				<p>
+					<img src="img/active1.png"><span>xxxx年xx月xx日</span>
+					<img src="img/active2.png"><span>地点地点地点</span>
+					<img src="img/active3.png"><span>社团名称社团名称</span>
+				</p>
+			</div>
 		</div>
 		
 		<div class="active_active">
 			<img src="#">
-			<h3 class="title_bg">社团活动名称</h3>
-			<pre>
-				aaa
-				bbb
-				ccc
-				ddd
-				eee
-			</pre>
-			<button type="button">查看详情</button>
-			<button type="button">参加活动</button>
-			<p>
-				<span>xxxx年xx月xx日</span>
-				<span>地点地点地点</span>
-				<span>社团名称社团名称</span>
-			</p>
+			<div>
+				<h3 class="title_bg">社团活动名称</h3>
+				<p class="active_active_content">
+					aaa
+					bbb
+					ccc
+					ddd
+					eee
+				</p>
+				<p>
+					<a href="activeDetail.jsp" class="button">查看详情</a>
+					<a href="activeDetail.jsp" class="button">参加活动</a>
+				</p>
+				<p>
+					<img src="img/active1.png"><span>xxxx年xx月xx日</span>
+					<img src="img/active2.png"><span>地点地点地点</span>
+					<img src="img/active3.png"><span>社团名称社团名称</span>
+				</p>
+			</div>
 		</div>
+
 		
 		<!-- 分页标签 -->
 		<ul class="page">
-			<li>首页</li>
-			<li>1</li>
-			<li>2</li>
-			<li>末页</li>
+			<li><a href="#">&lt;&lt;</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">&gt;&gt;</a></li>
 		</ul>
 		<!-- ./分页标签 -->
 	</div>
@@ -117,6 +135,7 @@
 	<div class="content_right active_right">
 		<div class="search">
 			<input type="text" value="搜索你感兴趣的活动">
+			<a href="#"><img src="img/search.png"></a>
 		</div>
 		<div class="page_right_content">
 			<h3>新闻资讯<span>news</span></h3>
@@ -137,5 +156,11 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".header_nav_ul>li:eq(1)").addClass("header_active")
+})
+</script>
 </body>
 </html>
