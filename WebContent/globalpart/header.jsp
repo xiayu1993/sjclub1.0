@@ -22,7 +22,7 @@
 }
 .header_nav_ul{
 	display:inline-block;
-	margin-left:64px;
+	margin-left:100px;
 	padding:15px 0;
 	
 	/* 调整导航条使其与图片顶部对齐 */
@@ -57,8 +57,8 @@
 	
 	/* 调整登录、注册的位置，使其放进导航条中 */
 	position:absolute;
-	top:9px;
-	left:957px;
+	top:12px;
+	left:955px;
 	z-index:2;
 }
 #header_nav_login>li>a{
