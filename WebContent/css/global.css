@@ -25,7 +25,9 @@ img/* img elements 图片元素 */{
 /** 设置默认字体 **/
 body, input, button, select, textarea {
   font: 16px pan, Arial, Helvetica, sans-serif;
+  font-weight:normal;
 }
+h1, h2, h3, h4, h5, h6{ font-weight:normal; }
 em{ font-style:normal; }
 /** 重置列表元素 **/
 ul{ list-style: none; }
@@ -101,9 +103,9 @@ body{
 	margin-left:15px;
 	color:#999;
 }
-.page_nav>h3>span:last-child{
+.page_nav>h3>span>a{
+	/* 返回上一页链接的样式 */
 	color:#ff4800;
-	font-size:70%;
 }
 
 /* 分页标签 */
@@ -309,7 +311,7 @@ body{
 	padding-left:15px;
 }
 .active_active_content{
-	min-height:80px;
+	height:124px;
 	max-height:124px;
 	overflow:hidden;
 }

@@ -24,92 +24,92 @@
 	</div>
 	<div class="club_list">
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-	</div>
-	
-	<div class="club_list">
-		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 	</div>
 	
 	<div class="club_list">
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 	</div>
 	
 	<div class="club_list">
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+	</div>
+	
+	<div class="club_list">
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 	</div>

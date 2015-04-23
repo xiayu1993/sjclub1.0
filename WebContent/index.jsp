@@ -42,7 +42,7 @@
 	
 	<!-- 社团活动 -->
 	<div class="index_active">
-		<h3 class="title_bg">社团活动<span>club activities</span><a href="#"><span>更多>></span></a></h3>
+		<h3 class="title_bg">社团活动<span>club activities</span><a href="active.jsp"><span>更多&gt;&gt;</span></a></h3>
 		<div class="index_active_list">
 			<div>
 				<a href="#"><img src="#"></a>
@@ -117,7 +117,7 @@
 	
 	<!-- 特别推荐 -->
 	<div class="index_special">
-		<h3 class="title_bg">特别推荐<span>special activities recommendation</span></h3>
+		<h3 class="title_bg">特别推荐<span>special recommendation</span></h3>
 		<img src="#">
 		<div>
 			<h4>视界网络新媒体社团</h4>

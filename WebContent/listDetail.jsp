@@ -22,7 +22,7 @@
 	<!-- listDetail-left -->
 	<div class="content_left listDetail_left">
 		<div class="page_nav">
-			<h3>社团列表<span>club lists</span><span>&gt;&gt;&nbsp;xxxxx社团</span></h3>
+			<h3>社团列表<span><a href="list.jsp">club lists</a></span><span>&gt;&gt;&nbsp;xxxxx社团</span></h3>
 		</div>
 		<div class="listDetail_content">
 			<h2>xxxxxxx社团</h2>

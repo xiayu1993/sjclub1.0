@@ -20,7 +20,7 @@
 <!-- 页面内容 -->
 <div class="content" id="sjclub_active">
 	<div class="page_nav">
-		<h3>社团活动列表<span>club actives lists</span><span>&gt;&gt;活动详情</span></h3>
+		<h3>社团活动列表<span><a href="active.jsp">club actives lists</a></span><span>&gt;&gt;&nbsp;活动详情</span></h3>
 	</div>
 	<div>
 		<div class="activeDetail_img"><img src="#"></div>
