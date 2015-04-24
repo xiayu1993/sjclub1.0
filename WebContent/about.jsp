@@ -18,7 +18,7 @@
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
-<div class="content" id="sjclub_about">
+<div class="content">
 	<!-- 页面左边内容 -->
 	<div class="content_left about_left">
 		<h3 class="title_bg">江汉大学社团平台</h3>

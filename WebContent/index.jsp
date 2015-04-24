@@ -18,9 +18,9 @@
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
-<div class="content" id="sjclub_index">
+<div class="content">
 	<!-- 热点图展示区 -->
-	<div class="index_show  clearfix">
+	<div class="index_show">
 		<div class="index_show_img"></div>
 		<div class="index_show_popularity">
 			<h3 class="title_bg">校园人气榜<span>popularity</span></h3>

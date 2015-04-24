@@ -75,8 +75,8 @@
 		<li style="width:40px;"></li>
 	</ul>
 	<ul id="header_nav_login">
-		<li><a href="#">登录</a></li>
-		<li><a href="#">注册</a></li>
+		<li><a href="login.jsp">登录</a></li>
+		<li><a href="register.jsp">注册</a></li>
 	</ul>
 </div>
 <!-- ./导航条 -->

@@ -8,7 +8,7 @@
 <meta name="renderer" content="webkit">
 <!-- 使IE浏览器启用最新的版本 -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>社团活动详情</title>
+<title>登录 | 社团平台</title>
 <link rel="shortcut icon" href="img/icon.ico">
 <link rel="stylesheet" href="css/global.css">
 </head>
@@ -19,22 +19,33 @@
 
 <!-- 页面内容 -->
 <div class="content">
-	<div class="page_nav">
-		<h3>社团活动列表<span><a href="active.jsp">club actives lists</a></span><span>&gt;&gt;&nbsp;活动详情</span></h3>
+	<div class="content_left">
+		<h3 class="title_bg title_center">欢迎登录</h3>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="account">邮箱：</label>
+				<div>
+					<input type="text" name="account" id="account" placeholder="Email">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password">密码：</label>
+				<div>
+					<input type="password" name="password" id="password" placeholder="Password">
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="reset" value="重置">
+				<input type="submit" value="登录">
+			</div>
+		</form>
 	</div>
-	<div>
-		<div class="activeDetail_img"><img src="#"></div>
-		<div class="activeDetail_content">
-			<h2>标题标题标题标题标题</h2>
-			<p>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
-			正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
-			作文作文作文作文作文作文作文正文正文正文正文正文正文正文正文正文正文正文正文
-			</p>
-		</div>
-		<div class="activeDetail_info">
-			<p>活动时间：<span>xxxx年xx月xx日</span></p>
-			<p>活动地点：<span>xxxxx</span></p>
-			<p>举办单位：<span>xxxxxxxxxxx</span><a href="#" class="button">我要参加</a></p>
+	
+	<div class="content_right">
+		<div class="page_right_content lr_explain">
+			<h3>特别说明</h3>
+			<p>主页君很开心看到大家来注册哟</p><br>
+			<p>大家可以起个萌萌哒的名字</p><br>
 		</div>
 	</div>
 </div>
@@ -46,7 +57,7 @@
 <script src="js/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	$(".header_nav_ul>li:eq(1)").addClass("header_active")
+	$(".footer").addClass("footer_fixed")
 })
 </script>
 </body>

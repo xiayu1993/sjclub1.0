@@ -18,7 +18,7 @@
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
-<div class="content" id="sjclub_list">
+<div class="content">
 	<div class="page_nav">
 		<h3>社团列表<span>club lists</span></h3>
 	</div>

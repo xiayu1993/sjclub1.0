@@ -18,8 +18,8 @@
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
-<div class="content" id="sjclub_tools">
-	<h3 class="title_bg tools_h3">小工具解决大烦恼</h3>
+<div class="content">
+	<h3 class="title_bg title_center">小工具解决大烦恼</h3>
 	<div class="tools_content">
 		<img src="img/tools1.png" id="tools1_png">
 		<img src="img/tools2.png" id="tools2_png">
