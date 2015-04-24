@@ -14,6 +14,7 @@
 .header_nav>img{
 	width:400px;
 	heigth:60px;
+	float:left;
 	
 	/* 图片文字周围有透明背景，所以需要调整位置 */
 	position:relative;
@@ -21,15 +22,8 @@
 	left:-8px;
 }
 .header_nav_ul{
-	display:inline-block;
-	margin-left:64px;
+	margin-left:464px;
 	padding:15px 0;
-	
-	/* 调整导航条使其与图片顶部对齐 */
-	position:relative;
-	top:-25px;
-	left:0;
-	z-index:1;
 }
 .header_nav_ul>li{
 	display:inline-block;
@@ -57,7 +51,7 @@
 	
 	/* 调整登录、注册的位置，使其放进导航条中 */
 	position:absolute;
-	top:9px;
+	top:6px;
 	left:957px;
 	z-index:2;
 }

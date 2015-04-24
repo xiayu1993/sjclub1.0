@@ -71,6 +71,8 @@ body{
 .content{
 	width:1000px;
 	margin:20px auto;
+	padding:20px;
+	clear:both;
 }
 
 /* 背景为白色，上下为虚线边框，左右无边框的标题 */
@@ -200,7 +202,7 @@ body{
 }
 .index_show_popularity>ol{
 	margin-top:10px;
-	margin-left:65px;
+	margin-left:75px;
 	text-align:left;
 }
 .index_show_popularity>ol>li{
@@ -311,8 +313,8 @@ body{
 	padding-left:15px;
 }
 .active_active_content{
-	height:124px;
-	max-height:124px;
+	height:132px;
+	max-height:132px;
 	overflow:hidden;
 }
 .active_active>div>p>a:last-child{
@@ -363,7 +365,6 @@ body{
 * tools.jsp
 ************************/
 .tools_h3{
-	margin-top:-20px;
 	text-align:center;
 	color:#666;
 }
