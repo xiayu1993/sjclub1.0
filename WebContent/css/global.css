@@ -23,9 +23,11 @@ img/* img elements 图片元素 */{
   padding: 0;
 }
 /** 设置默认字体 **/
-body,button, input, select, textarea {
+body, input, button, select, textarea {
   font: 16px pan, Arial, Helvetica, sans-serif;
+  font-weight:normal;
 }
+h1, h2, h3, h4, h5, h6{ font-weight:normal; }
 em{ font-style:normal; }
 /** 重置列表元素 **/
 ul{ list-style: none; }
@@ -52,11 +54,27 @@ body{
 	min-width:1200px;
 	background-image:url(../img/bg.png);
 }
+/* 按钮样式 */
+.button{
+	color:#fff;
+	background-color:#414141;
+	padding:5px;
+	font-size:80%;
+	border:none;
+	border-radius:10px;
+}
+.button:hover{
+	text-decoration:none;
+}
+
 /* 页面内容区 */
 .content{
 	width:1000px;
 	margin:20px auto;
+	padding:20px;
+	clear:both;
 }
+
 /* 背景为白色，上下为虚线边框，左右无边框的标题 */
 .title_bg{
 	background-color:#fff;
@@ -71,6 +89,11 @@ body{
 	color:#999;
 	margin-left:10px;
 }
+.title_center{
+	text-align:center;
+	color:#666;
+}
+
 /* 社团活动和社团列表的面包屑导航 */
 .page_nav{
 	margin-top:-15px;
@@ -86,17 +109,37 @@ body{
 	margin-left:15px;
 	color:#999;
 }
-.page_nav>h3>span:last-child{
+.page_nav>h3>span>a{
+	/* 返回上一页链接的样式 */
 	color:#ff4800;
-	font-size:70%;
 }
 
 /* 分页标签 */
 .page>li{
-	display:inline;
+	float:left;
 	text-align:center;
-	border:1px solid #000;
-	padding:5px;
+	border-top:1px solid #aaa;
+	border-bottom:1px solid #aaa;
+	border-left:1px solid #aaa;
+	width:35px;
+	height:35px;
+	line-height:35px;
+	background-color:#fff;
+}
+.page>li:first-child{
+	width:45px;
+}
+.page>li:last-child{
+	border-right:1px solid #aaa;
+	width:45px;
+}
+.page>li>a{
+	color:#ff4800;
+	padding:8px 12px;
+}
+.page>li>a:hover{
+	background-color:rgb(235,235,235);
+	text-decoration:none;
 }
 
 /* 社团列表详情页和社团活动列表页的搜索栏 */
@@ -104,10 +147,15 @@ body{
 	margin-bottom:20px;
 }
 .search>input{
-	width:300px;
-	height:30px;
+	width:268px;
+	height:24px;
 	line-height:25px;
 	color:#ccc;
+}
+.search>a>img{
+	float:right;
+	height:24px;
+	width:32px;
 }
 
 /* 社团活动列表页，社团详情页，关于我们三个页面中左右分页 */
@@ -119,7 +167,6 @@ body{
 	margin-left:700px;
 	width:300px;
 }
-
 
 /* 社团活动列表页，社团详情页，关于我们三个页面中右边标题以及内容 */
 .page_right_content>h3{
@@ -159,7 +206,7 @@ body{
 }
 .index_show_popularity>ol{
 	margin-top:10px;
-	margin-left:65px;
+	margin-left:75px;
 	text-align:left;
 }
 .index_show_popularity>ol>li{
@@ -183,6 +230,7 @@ body{
 }
 .index_active_list{
 	text-align:center;
+	margin-bottom:15px;
 }
 .index_active_list>div{
 	display:inline-block;
@@ -261,10 +309,33 @@ body{
 	height:240px;
 	background-color:#ccc;
 }
-.active_active>h3{
+.active_active>div{
 	margin-left:185px;
+}
+.active_active>div>h3,
+.active_active>div>p{
 	padding-left:15px;
 }
+.active_active_content{
+	height:132px;
+	max-height:132px;
+	overflow:hidden;
+}
+.active_active>div>p>a:last-child{
+	margin-left:190px;
+}
+.active_active>div>p:last-child{
+	margin-top:10px;
+	font-size:80%;
+	color:#ff4800;
+}
+.active_active>div>p:last-child span{
+	position:relative;
+	top:-5px;
+	margin-left:5px;
+	margin-right:15px;
+}
+
 
 
 /*****************
@@ -297,90 +368,80 @@ body{
 /************************
 * tools.jsp
 ************************/
-.tools_h3{
-	margin-top:-20px;
-	text-align:center;
-	color:#666;
-}
-.content_tools{
+.tools_content{
 	width:1000px;
-	height:420px;
-	margin:10px 0;
+	height:500px;
+	margin:40px 0;
 	
-	/* 为之后的四个方块提供基准 */
+	/* 为之后的图形定位提供基准 */
 	position:relative;
 	top:0;
 	left:0;
-}
-.angle{
-	width:160px;
-	height:160px;
-	line-height:160px;
-	text-align:center;
-	font-size:48px;
-	
-	position:absolute;
 	z-index:1;
 }
-/* 四个方块的颜色 */
-.tong,
-.ping{
-	background-color: #414141;
-	color:#fff;
+.tools_content>img{
+	z-index:4;
 }
-.wen,
-.tou{
-	background-color:#ccc;
-	color:#999;
-}
-/* 四个方块的定位 */
-.tong{
+#tools2_png{
+	position:absolute;
 	top:0;
-	left:80px;
+	left:807px;
 }
-.tou{
-	top:160px;
-	left:80px;
-}
-.wen{
-	top:80px;
-	left:760px;
-}
-.ping{
-	top:260px;
-	left:760px;
-}
-/* 方块四个角 */
-.angle-span{
-	height:0;
-	width:0;
-	border-width:80px;
-	border-style:solid;
-	border-color: transparent;
+.tools_content>div{
+	padding:19px 20px;
+	width:573px;
+	color:#333;
 	
 	position:absolute;
+	left:194px;
+}
+.tools_content>div>h2{
+	margin-bottom:10px;
+}
+
+/* 边框 */
+#tools_content_1,
+#tools_content_3,
+#tools_content_5{
+	border-top:1px dashed #666;
+	border-bottom:1px dashed #666;
+	z-index:3;
+}
+/* 背景色 */
+#tools_content_2,
+#tools_content_4{
+	background-color:#fff;
+	text-align:right;
 	z-index:2;
 }
-.span-left-top{
+
+/* 定位与细节调整 */
+#tools_content_1{
 	top:0;
-	left:-80px;
-	border-top-color:#fff;
 }
-.span-right-top{
-	top:0;
-	left:80px;
-	border-top-color:#fff;
+#tools_content_2{
+	top:97px;
 }
-.span-left-bottom{
-	top:0;
-	left:-80px;
-	border-bottom-color:#fff;
+#tools_content_3{
+	top:193px;
+	
+	padding-bottom:20px;
 }
-.span-right-bottom{
-	top:0;
-	left:80px;
-	border-bottom-color:#fff;
+#tools_content_4{
+	top:290px;
 }
+#tools_content_5{
+	top:386px;
+	
+	padding-top:56px;
+}
+#tools_content_5>p{
+	text-align:center;
+}
+#tools_content_5>p>a{
+	color:#ff4800;
+}
+
 
 
 /*****************************
@@ -452,11 +513,9 @@ body{
 	font-size:80%;
 	border-bottom:1px dashed #333;
 }
-.activeDetail_info button{
+.activeDetail_info a{
 	float:right;
 	margin-right:20px;
-	font-size:14px;
-	color:#ff4800;
 	
 	position:relative;
 	top:-5px;
@@ -486,6 +545,67 @@ body{
 .listDetail_info>p{
 	color:#ff4800;
 	font-size:80%;
+	margin-top:10px;
 	padding-left:5px;
 }
+
+
+/********************************
+* login.jsp & register.jsp
+*********************************/
+.lr_explain{
+	/* 使其与左边底部对齐 */
+	padding-top:15px;
+}
+/* 两个页面的表单样式 */
+.form-horizontal{
+	margin:20px auto;
+	text-align:center;
+}
+.form-group{
+	margin:10px auto;
+}
+.form-group>label{
+	display:inline-block;
+	width:80px;
+	text-align:right;
+}
+.form-group>div{
+	display:inline-block;
+	text-align:left;
+}
+.form-group>div>input{
+	width:220px;
+	padding:6px 12px;
+	background-color:#fff;
+	
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+		 -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-group>div>input:focus{
+	 border-color: #ff4800;
+	 outline: 0;
+	 -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 72, 0, .6);
+	 		 box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 72, 0, .6);
+}
+.form-group>input{
+	border:1px solid #ccc;
+	border-radius:4px;
+	background-color:#fff;
+	padding:6px 12px;
+}
+.form-group>input:hover{
+	background-color:#eee;
+	cursor:pointer;
+}
+
+
+
+
+
 

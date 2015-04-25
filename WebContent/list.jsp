@@ -14,9 +14,7 @@
 </head>
 <body>
 <!-- 页面头部 -->
-<jsp:include page="globalpart/header.jsp">
-	<jsp:param name="pagename" value="sjclub_list.jsp" />
-</jsp:include>
+<%@include file="globalpart/header.jsp" %>
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
@@ -26,109 +24,118 @@
 	</div>
 	<div class="club_list">
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-	</div>
-	
-	<div class="club_list">
-		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-		<div>
-			<a href="#"><img src="#"></a>
-			<p>社团社团社团社团社团社团</p>
-		</div>
-		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 	</div>
 	
 	<div class="club_list">
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 	</div>
 	
 	<div class="club_list">
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 		<div>
-			<a href="#"><img src="#"></a>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+	</div>
+	
+	<div class="club_list">
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
+			<p>社团社团社团社团社团社团</p>
+		</div>
+		<div>
+			<a href="listDetail.jsp"><img src="#"></a>
 			<p>社团社团社团社团社团社团</p>
 		</div>
 	</div>
 	
 	<!-- 分页标签 -->
-		<ul class="page">
-			<li>首页</li>
-			<li>1</li>
-			<li>2</li>
-			<li>末页</li>
-		</ul>
-		<!-- ./分页标签 -->
+	<ul class="page">
+		<li><a href="#">&lt;&lt;</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">&gt;&gt;</a></li>
+	</ul>
+	<!-- ./分页标签 -->
 </div>
 <!-- ./页面内容 -->
 
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".header_nav_ul>li:eq(2)").addClass("header_active")
+})
+</script>
 </body>
 </html>

@@ -14,9 +14,7 @@
 </head>
 <body>
 <!-- 页面头部 -->
-<jsp:include page="globalpart/header.jsp">
-	<jsp:param name="pagename" value="sjclub_index.jsp" />
-</jsp:include>
+<%@include file="globalpart/header.jsp" %>
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
@@ -24,7 +22,7 @@
 	<!-- listDetail-left -->
 	<div class="content_left listDetail_left">
 		<div class="page_nav">
-			<h3>社团列表<span>club lists</span><span>>>&nbsp;xxxxx社团</span></h3>
+			<h3>社团列表<span><a href="list.jsp">club lists</a></span><span>&gt;&gt;&nbsp;xxxxx社团</span></h3>
 		</div>
 		<div class="listDetail_content">
 			<h2>xxxxxxx社团</h2>
@@ -34,7 +32,7 @@
 			</p>
 		</div>
 		<div class="listDetail_info">
-			<button type="button">+加入社团</button>
+			<a href="#" class="button">+加入社团</a>
 			<p class="title_bg">tips:加入社团，参加此社团的活动，了解此社团的更多详情。最多能同时加入三个社团哦。</p>
 		</div>
 	</div>
@@ -44,6 +42,7 @@
 	<div class="content_right listDetail_right">
 		<div class="search">
 			<input type="text" value="搜索你感兴趣的活动">
+			<a href="#"><img src="img/search.png"></a>
 		</div>
 		<div class="page_right_content">
 			<h3>其他社团<span>others</span></h3>
@@ -61,5 +60,11 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".header_nav_ul>li:eq(2)").addClass("header_active")
+})
+</script>
 </body>
 </html>

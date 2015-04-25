@@ -14,15 +14,13 @@
 </head>
 <body>
 <!-- 页面头部 -->
-<jsp:include page="globalpart/header.jsp">
-	<jsp:param name="pagename" value="sjclub_index.jsp" />
-</jsp:include>
+<%@include file="globalpart/header.jsp" %>
 <!-- ./页面头部 -->
 
 <!-- 页面内容 -->
 <div class="content">
 	<!-- 热点图展示区 -->
-	<div class="index_show  clearfix">
+	<div class="index_show">
 		<div class="index_show_img"></div>
 		<div class="index_show_popularity">
 			<h3 class="title_bg">校园人气榜<span>popularity</span></h3>
@@ -44,7 +42,7 @@
 	
 	<!-- 社团活动 -->
 	<div class="index_active">
-		<h3 class="title_bg">社团活动<span>club activities</span><a href="#"><span>更多>></span></a></h3>
+		<h3 class="title_bg">社团活动<span>club activities</span><a href="active.jsp"><span>更多&gt;&gt;</span></a></h3>
 		<div class="index_active_list">
 			<div>
 				<a href="#"><img src="#"></a>
@@ -119,7 +117,7 @@
 	
 	<!-- 特别推荐 -->
 	<div class="index_special">
-		<h3 class="title_bg">特别推荐<span>special activities recommendation</span></h3>
+		<h3 class="title_bg">特别推荐<span>special recommendation</span></h3>
 		<img src="#">
 		<div>
 			<h4>视界网络新媒体社团</h4>
@@ -146,5 +144,11 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
+<script src="js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".header_nav_ul>li:eq(0)").addClass("header_active")
+})
+</script>
 </body>
 </html>

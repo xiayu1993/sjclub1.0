@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
-    	//获取当前页面的名字
-    	String pageName = request.getParameter("pagename");
-    %>
 <style>
 .header_nav{
 	width:1000px;
@@ -18,6 +14,7 @@
 .header_nav>img{
 	width:400px;
 	heigth:60px;
+	float:left;
 	
 	/* 图片文字周围有透明背景，所以需要调整位置 */
 	position:relative;
@@ -25,15 +22,8 @@
 	left:-8px;
 }
 .header_nav_ul{
-	display:inline-block;
-	margin-left:64px;
+	margin-left:464px;
 	padding:15px 0;
-	
-	/* 调整导航条使其与图片顶部对齐 */
-	position:relative;
-	top:-25px;
-	left:0;
-	z-index:1;
 }
 .header_nav_ul>li{
 	display:inline-block;
@@ -61,7 +51,7 @@
 	
 	/* 调整登录、注册的位置，使其放进导航条中 */
 	position:absolute;
-	top:9px;
+	top:6px;
 	left:957px;
 	z-index:2;
 }
@@ -77,16 +67,16 @@
 	<img src="img/jhdx.png">
 	<ul class="header_nav_ul title_bg">
 		<%--获取相应的页面后使其变黑 --%>
-        <li<%if(pageName.equals("sjclub_index.jsp")){ //class前要空一格%> class="header_active"<%} %>><a href="index.jsp">网站首页</a></li>
-        <li<%if(pageName.equals("sjclub_active.jsp")){ %> class="header_active"<%} %>><a href="active.jsp">社团活动</a></li>
-        <li<%if(pageName.equals("sjclub_list.jsp")){ %> class="header_active"<%} %>><a href="list.jsp">社团列表</a></li>
-        <li<%if(pageName.equals("sjclub_tools.jsp")){ %> class="header_active"<%} %>><a href="tools.jsp">实用工具</a></li>
-        <li<%if(pageName.equals("sjclub_about.jsp")){ %> class="header_active"<%} %>><a href="about.jsp">关于我们</a></li>
+        <li><a href="index.jsp">网站首页</a></li>
+        <li><a href="active.jsp">社团活动</a></li>
+        <li><a href="list.jsp">社团列表</a></li>
+        <li><a href="tools.jsp">实用工具</a></li>
+        <li><a href="about.jsp">关于我们</a></li>
 		<li style="width:40px;"></li>
 	</ul>
 	<ul id="header_nav_login">
-		<li><a href="#">登录</a></li>
-		<li><a href="#">注册</a></li>
+		<li><a href="login.jsp">登录</a></li>
+		<li><a href="register.jsp">注册</a></li>
 	</ul>
 </div>
 <!-- ./导航条 -->
