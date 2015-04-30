@@ -21,7 +21,8 @@
 <div class="content">
 	<div class="content_left">
 		<h3 class="title_bg title_center">欢迎登录</h3>
-		<form class="form-horizontal">
+		<div class="form-horizontal">
+			<p class="form-tip"></p>
 			<div class="form-group">
 				<label for="account">邮箱：</label>
 				<div>
@@ -35,10 +36,10 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<input type="reset" value="重置">
-				<input type="submit" value="登录">
+				<input type="reset" value="重置" id="reset">
+				<input type="submit" value="登录" id="submit">
 			</div>
-		</form>
+		</div>
 	</div>
 	
 	<div class="content_right">
@@ -57,7 +58,35 @@
 <script src="js/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	$(".footer").addClass("footer_fixed")
+	$(".footer").addClass("footer_fixed");
+	
+	var acc = $("#account");
+	var pas = $("#password");
+	var tip = $(".form-tip");
+	var reset = $("#reset");
+	var submit = $("#submit");
+	reset.click(function(){
+		acc.val("");
+		pas.val("");
+		tip.css("display","none").html("");
+	})
+	submit.click(function(){
+		$.post("UserServlet",
+				{	
+					action:"login",
+					account:acc.val(),
+					password:pas.val()
+				},
+				function(data){
+					if(data == "ok"){
+						window.location.href="index.jsp";
+					}
+					if(data == "error"){
+						tip.css("display","block").html("邮箱或密码错误！");
+					}
+				}	
+			)
+	})
 })
 </script>
 </body>

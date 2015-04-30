@@ -20,8 +20,9 @@
 <!-- 页面内容 -->
 <div class="content">
 	<div class="content_left">
-		<h3 class="title_bg title_center">欢迎加入我们</h3>
-		<form class="form-horizontal">
+		<h3 class="title_bg title_center">欢迎注册</h3>
+		<div class="form-horizontal">
+			<p class="form-tip">哎呀呀！</p>
 			<div class="form-group">
 				<label for="account">邮箱：</label>
 				<div>
@@ -50,7 +51,7 @@
 				<input type="reset" value="重置">
 				<input type="submit" value="注册">
 			</div>
-		</form>
+		</div>
 	</div>
 	
 	<div class="content_right">
