@@ -74,9 +74,6 @@
         <li><a href="about.jsp">关于我们</a></li>
 		<li style="width:40px;"></li>
 	</ul>
-	<ul id="header_nav_login">
-		<li><a href="login.jsp">登录</a></li>
-		<li><a href="register.jsp">注册</a></li>
-	</ul>
+	<%@include file="loginOrCenter.jsp" %>
 </div>
 <!-- ./导航条 -->

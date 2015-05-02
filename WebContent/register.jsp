@@ -22,7 +22,7 @@
 	<div class="content_left">
 		<h3 class="title_bg title_center">欢迎注册</h3>
 		<div class="form-horizontal">
-			<p class="form-tip">哎呀呀！</p>
+			<p class="form-tip"></p>
 			<div class="form-group">
 				<label for="account">邮箱：</label>
 				<div>
@@ -48,8 +48,8 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<input type="reset" value="重置">
-				<input type="submit" value="注册">
+				<input type="reset" value="重置" id="reset">
+				<input type="submit" value="注册" id="submit">
 			</div>
 		</div>
 	</div>
@@ -70,7 +70,37 @@
 <script src="js/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	$(".footer").addClass("footer_fixed")
+	$(".footer").addClass("footer_fixed");
+	
+	var account =  $("#account");
+	var name = $("#name");
+	var password = $("#password");
+	var repassword = $("#repassword");
+	var tip = $(".form-tip");
+	var reset = $("#reset");
+	var submit = $("#submit");
+	
+	reset.click(function(){
+		tip.css("display", "block").html("");
+	})
+	submit.click(function(){
+		$.post("UserServlet",
+				{
+					action:"register",
+					account:account.val(),
+					password:password.val(),
+					name:name.val()
+				},
+				function(data){
+					if("ok"){
+						
+					}
+					if("error"){
+						
+					}
+				})
+	})
+	
 })
 </script>
 </body>
