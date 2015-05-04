@@ -22,8 +22,8 @@
 	<div class="content_left">
 		<h3 class="title_bg title_center">欢迎注册</h3>
 		<div class="form-horizontal">
-			<p class="form-tip"></p>
-			<div class="form-group">
+			<p class="form-tip" style="display:block">暂时不提供注册功能！</p>
+			<!-- <div class="form-group">
 				<label for="account">邮箱：</label>
 				<div>
 					<input type="text" name="account" id="account" placeholder="Email">
@@ -50,7 +50,7 @@
 			<div class="form-group">
 				<input type="reset" value="重置" id="reset">
 				<input type="submit" value="注册" id="submit">
-			</div>
+			</div> -->
 		</div>
 	</div>
 	

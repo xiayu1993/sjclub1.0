@@ -55,7 +55,7 @@ public class UserIsLogin implements Filter {
 		String uri = request.getRequestURI();
 		//获取session中的用户信息
 		HttpSession session = request.getSession();
-		User user = (User)session.getAttribute("user");
+		User user = (User)session.getAttribute("userinfo");
 		//如果uri属于后台管理页面，则进行登录检查
 		if((uri.indexOf("manager") != -1) || (uri.indexOf("count") != -1)){
 			//如果用户未登录

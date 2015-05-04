@@ -69,7 +69,7 @@
 					<div class="active_active_content"><%=rs.getString("ActiveContent") %></div>
 					<p>
 						<a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%>&clubId=<%=rs.getString("ClubId") %> class="button">查看详情</a>
-						<a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%>&userId=${user.Id } class="button">参加活动</a>
+						<%-- <a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%>&userId=${user.Id } class="button">参加活动</a> --%>
 					</p>
 					<p>
 						<img src="img/active1.png"><span><%=rs.getString("ActiveEndTime") %></span>
@@ -92,14 +92,14 @@
 		//上一页
 		if(CurrPage > 1){
 %>
-			<li><a href="list.jsp?page=<%=CurrPage-1 %>">&laquo;</a></li>
+			<li><a href="active.jsp?page=<%=CurrPage-1 %>">&laquo;</a></li>
 <%
 		}
 %><%
 		//页码
 		for(int n=1; n<=CountPage; n++ ){
 %>
-			<li><a href="list.jsp?page=<%=n %>" <%if(n==CurrPage){ %> style="color:#ccc"<%} %>><%=n %></a></li>
+			<li><a href="active.jsp?page=<%=n %>" <%if(n==CurrPage){ %> style="color:#ccc"<%} %>><%=n %></a></li>
 			
 <%
 		}
@@ -107,7 +107,7 @@
 		//下一页
 		if(CurrPage < CountPage){
 %>
-			<li><a href="list.jsp?page=<%=CurrPage+1 %>">&raquo;</a></li>
+			<li><a href="active.jsp?page=<%=CurrPage+1 %>">&raquo;</a></li>
 <%
 		}
 %>
