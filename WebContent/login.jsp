@@ -65,45 +65,30 @@ $(document).ready(function(){
 	var tip = $(".form-tip");
 	var reset = $("#reset");
 	var submit = $("#submit");
-	//是否允许提交登录
-	var allowLogin = false;
 	
 	//重置
 	reset.click(function(){
 		acc.val("");
 		pas.val("");
-		tip.css("display", "block").html("");
+		tip.css("display", "none").html("");
 	})
 	
-	if(!acc.val().isEmpty()){
-		allowLogin = true;
-	}else{
-		tip.css("display", "block").html("邮箱不能为空！");
-	}
-	if(!pas.val().isEmpty()){
-		allowLogin = true;
-	}else{
-		tip.css("display", "block").html("密码不能为空！");
-	}
-	
 	submit.click(function(){
-		if(allowLogin){
-			$.post("UserServlet",
-					{	
-						action:"login",
-						account:acc.val(),
-						password:pas.val()
-					},
-					function(data){
-						if(data == "ok"){
-							window.location.href="index.jsp";
-						}
-						if(data == "error"){
-							tip.css("display","block").html("邮箱或密码错误！");
-						}
-					}	
-				)
-		}
+		$.post("UserServlet",
+				{	
+					action:"login",
+					account:acc.val(),
+					password:pas.val()
+				},
+				function(data){
+					if(data == "ok"){
+						window.location.href="index.jsp";
+					}
+					if(data == "error"){
+						tip.css("display","block").html("邮箱或密码错误！");
+					}
+				}	
+			)
 	})
 })
 </script>

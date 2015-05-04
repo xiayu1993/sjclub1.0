@@ -56,10 +56,12 @@ public class UserServlet extends HttpServlet {
 		response.setHeader("Cache-Control","no-cache");
 		String account = request.getParameter("account");
 		String password = request.getParameter("password");
+		User user = null;
 		if(!UserDao.isExist(account, password)){
 			out.print("error");
 		}else{
-			request.getSession().setAttribute("user", UserDao.login(account, password));
+			user = UserDao.login(account, password);
+			request.getSession().setAttribute("userinfo", user);
 			out.print("ok");
 		}
 	}

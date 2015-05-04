@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.Connection" %>
+    <%@ page import="java.sql.PreparedStatement" %>
+    <%@ page import="java.sql.ResultSet" %>
+    <%@ page import="org.sjclub.util.DBUtil" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,21 +26,41 @@
 	<div class="page_nav">
 		<h3>社团活动列表<span><a href="active.jsp">club actives lists</a></span><span>&gt;&gt;&nbsp;活动详情</span></h3>
 	</div>
+	<%
+   		//获取active.jsp页面传递的活动id和所属的社团id
+	    String activeId =request.getParameter("activeId");
+	    String clubId = request.getParameter("clubId");
+	    Connection conn = DBUtil.getConnection();
+	    String sql = "select * from dbo.T_ClubActive where Id = ?";
+	    try{
+	    	PreparedStatement ps = conn.prepareStatement(sql);
+	    	ps.setString(1,activeId);
+	    	ResultSet rs = ps.executeQuery();
+	    	if(rs.next()){
+	 %>
 	<div>
-		<div class="activeDetail_img"><img src="#"></div>
+		<div class="activeDetail_img"><img src=http://sjclub.org/<%=rs.getString("ActivePosterRoute") %>/<%=rs.getString("ActivePosterName") %>></div>
 		<div class="activeDetail_content">
-			<h2>标题标题标题标题标题</h2>
-			<p>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
-			正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
-			作文作文作文作文作文作文作文正文正文正文正文正文正文正文正文正文正文正文正文
-			</p>
+			<h2><%=rs.getString("ActiveHead") %></h2>
+			<div><%=rs.getString("ActiveContent") %></div>
 		</div>
 		<div class="activeDetail_info">
-			<p>活动时间：<span>xxxx年xx月xx日</span></p>
-			<p>活动地点：<span>xxxxx</span></p>
-			<p>举办单位：<span>xxxxxxxxxxx</span><a href="#" class="button">我要参加</a></p>
+			<p>活动时间：<span><%=rs.getDate("ActiveTime") %></span></p>
+			<!-- <p>活动地点：<span>xxxxx</span></p>
+			<p>举办单位：<span>xxxxxxxxxxx</span><a href="#" class="button">我要参加</a></p> -->
 		</div>
 	</div>
+	<%
+    		}
+    		rs.close();
+    		ps.close();
+	    }catch(Exception e){
+	    		e.printStackTrace();
+	    	}finally{
+	    		DBUtil.closeConnection(conn);
+	    	}
+    	%>
+	
 </div>
 <!-- ./页面内容 -->
 

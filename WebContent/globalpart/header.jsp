@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="org.sjclub.model.User" %>
+    <%
+      //用户是否登录的判断变量
+      boolean userIsLogin = false;
+      //判断用户是否登录
+      User user = (User)session.getAttribute("userinfo");
+      //如果session中存在用户信息则表示用户已经登录
+      if(user != null)
+        userIsLogin = true;
+    %>
 <style>
 .header_nav{
 	width:1000px;
@@ -74,6 +84,24 @@
         <li><a href="about.jsp">关于我们</a></li>
 		<li style="width:40px;"></li>
 	</ul>
-	<%@include file="loginOrCenter.jsp" %>
+	
+	<%
+    	if(userIsLogin){
+    %>
+    		<ul id="header_nav_login">
+    			<li><a href=http://sjclub.org/Frame.aspx?uid=<%=user.getId() %>>个人<br>中心</a>
+    		</ul>
+    
+    <%
+    	}else{
+    %>
+    		<ul id="header_nav_login">
+				<li><a href="login.jsp">登录</a></li>
+				<li><a href="register.jsp">注册</a></li>
+			</ul>
+    <%
+    	}
+    %>
+
 </div>
 <!-- ./导航条 -->

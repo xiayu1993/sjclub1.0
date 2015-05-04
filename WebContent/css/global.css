@@ -126,12 +126,8 @@ body{
 	line-height:35px;
 	background-color:#fff;
 }
-.page>li:first-child{
-	width:45px;
-}
 .page>li:last-child{
 	border-right:1px solid #aaa;
-	width:45px;
 }
 .page>li>a{
 	color:#ff4800;
@@ -229,7 +225,7 @@ body{
 	margin-right:15px;
 }
 .index_active_list{
-	text-align:center;
+	text-align:left;
 	margin-bottom:15px;
 }
 .index_active_list>div{
@@ -241,16 +237,20 @@ body{
 .index_active_list>div>a>img{
 	background-color:#ccc;
 	/* 此处加载的图片大小应该限制为220px*180px */
-	width:222px;
-	height:180px;
+	width:222px !important;
+	height:180px !important;
 }
 .index_active_list>div>p{
+	width:210px;
+	height:32px;
+	overflow:hidden;
 	margin:3px 5px;
 	font-size:80%;
 	text-align:left;
 }
 
 .index_active_list>div>p:last-child{
+	height:14px;
 	font-size:70%;
 	color:#999;
 }

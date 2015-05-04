@@ -81,7 +81,11 @@ $(document).ready(function(){
 	var submit = $("#submit");
 	
 	reset.click(function(){
-		tip.css("display", "block").html("");
+		account.val("");
+		password.val("");
+		name.val("");
+		repassword.val("");
+		tip.css("display", "none").html("");
 	})
 	submit.click(function(){
 		$.post("UserServlet",

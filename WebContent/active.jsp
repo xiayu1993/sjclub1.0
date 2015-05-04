@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.sql.ResultSet" %>
+    <jsp:useBean id="activePage" scope="page" class="org.sjclub.util.Page" />
+    <%! 
+    	//数据分页
+    	int CountPage = 0;
+    	int CurrPage = 1;
+    	int PageSize = 4;
+    	int CountRow = 0;
+    %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,110 +33,86 @@
 	</div>
 	<!-- 页面左边社团活动 -->
 	<div class="content_left active_left">
-		<div class="active_active">
-			<img src="#">
-			<div>
-				<h3 class="title_bg">社团活动名称</h3>
-				<p class="active_active_content">
-					aaa
-					bbb
-					ccc
-					ddd
-					eee
-				</p>
-				<p>
-					<a href="activeDetail.jsp" class="button">查看详情</a>
-					<a href="activeDetail.jsp" class="button">参加活动</a>
-				</p>
-				<p>
-					<img src="img/active1.png"><span>xxxx年xx月xx日</span>
-					<img src="img/active2.png"><span>地点地点地点</span>
-					<img src="img/active3.png"><span>社团名称社团名称</span>
-				</p>
+	
+	
+		<%-- 数据分页 --%>
+<%
+	//获取当前页面值
+	String strPage = request.getParameter("page");
+	//如果当前页面为空着赋值为1，不为空则获取改值
+	if(strPage == null){
+		CurrPage = 1;
+	}else{
+		CurrPage = Integer.parseInt(strPage);
+	}
+	//定义查询语句
+	String sql = "select * from dbo.T_ClubActive";
+	//执行查询结果
+	ResultSet rs = activePage.selectSql(sql);
+	//获取查询结果集中的记录数
+	rs.last();
+	CountRow = rs.getRow();
+	//计算总的页数
+	CountPage = (CountRow-1)/PageSize+1;
+	//获取第一条记录
+	rs.first();
+	int i = 0;
+	if(CountRow > 0){
+		//指定跳转的页码
+		rs.absolute(CurrPage * PageSize - PageSize + 1);
+		while(i < PageSize && !rs.isAfterLast()){
+		%>
+			<div class="active_active">
+				<img src=http://sjclub.org/<%=rs.getString("ActivePosterRoute") %>/<%=rs.getString("ActivePosterName") %>>
+				<div>
+					<h3 class="title_bg"><%=rs.getString("ActiveHead") %></h3>
+					<div class="active_active_content"><%=rs.getString("ActiveContent") %></div>
+					<p>
+						<a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%>&clubId=<%=rs.getString("ClubId") %> class="button">查看详情</a>
+						<a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%>&userId=${user.Id } class="button">参加活动</a>
+					</p>
+					<p>
+						<img src="img/active1.png"><span><%=rs.getString("ActiveEndTime") %></span>
+						<!-- <img src="img/active2.png"><span>地点地点地点</span>
+						<img src="img/active3.png"><span>社团名称社团名称</span> -->
+					</p>
+				</div>
 			</div>
-		</div>
-		
-		<div class="active_active">
-			<img src="#">
-			<div>
-				<h3 class="title_bg">社团活动名称</h3>
-				<p class="active_active_content">
-					aaa
-					bbb
-					ccc
-					ddd
-					eee
-				</p>
-				<p>
-					<a href="activeDetail.jsp" class="button">查看详情</a>
-					<a href="activeDetail.jsp" class="button">参加活动</a>
-				</p>
-				<p>
-					<img src="img/active1.png"><span>xxxx年xx月xx日</span>
-					<img src="img/active2.png"><span>地点地点地点</span>
-					<img src="img/active3.png"><span>社团名称社团名称</span>
-				</p>
-			</div>
-		</div>
-		
-		<div class="active_active">
-			<img src="#">
-			<div>
-				<h3 class="title_bg">社团活动名称</h3>
-				<p class="active_active_content">
-					aaa
-					bbb
-					ccc
-					ddd
-					eee
-				</p>
-				<p>
-					<a href="activeDetail.jsp" class="button">查看详情</a>
-					<a href="activeDetail.jsp" class="button">参加活动</a>
-				</p>
-				<p>
-					<img src="img/active1.png"><span>xxxx年xx月xx日</span>
-					<img src="img/active2.png"><span>地点地点地点</span>
-					<img src="img/active3.png"><span>社团名称社团名称</span>
-				</p>
-			</div>
-		</div>
-		
-		<div class="active_active">
-			<img src="#">
-			<div>
-				<h3 class="title_bg">社团活动名称</h3>
-				<p class="active_active_content">
-					aaa
-					bbb
-					ccc
-					ddd
-					eee
-				</p>
-				<p>
-					<a href="activeDetail.jsp" class="button">查看详情</a>
-					<a href="activeDetail.jsp" class="button">参加活动</a>
-				</p>
-				<p>
-					<img src="img/active1.png"><span>xxxx年xx月xx日</span>
-					<img src="img/active2.png"><span>地点地点地点</span>
-					<img src="img/active3.png"><span>社团名称社团名称</span>
-				</p>
-			</div>
-		</div>
-
+		<%
+				rs.next();
+				i++;
+			}
+			activePage.closeAll();
+		}
+		%>
 		
 		<!-- 分页标签 -->
-		<ul class="page">
-			<li><a href="#">&lt;&lt;</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">&gt;&gt;</a></li>
-		</ul>
-		<!-- ./分页标签 -->
+	<ul class="page">
+	<%
+		//上一页
+		if(CurrPage > 1){
+%>
+			<li><a href="list.jsp?page=<%=CurrPage-1 %>">&laquo;</a></li>
+<%
+		}
+%><%
+		//页码
+		for(int n=1; n<=CountPage; n++ ){
+%>
+			<li><a href="list.jsp?page=<%=n %>" <%if(n==CurrPage){ %> style="color:#ccc"<%} %>><%=n %></a></li>
+			
+<%
+		}
+%><%
+		//下一页
+		if(CurrPage < CountPage){
+%>
+			<li><a href="list.jsp?page=<%=CurrPage+1 %>">&raquo;</a></li>
+<%
+		}
+%>
+	</ul>
+	<!-- ./分页标签 -->
 	</div>
 	<!-- ./页面左边社团活动 -->
 	
