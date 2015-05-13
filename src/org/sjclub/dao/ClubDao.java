@@ -43,4 +43,29 @@ public class ClubDao {
 	public static void addclub(String userId, String clubId){
 		
 	}
+	
+	/**
+	 * 根据ClubId查询社团名称
+	 *
+	 */
+	public static String getClubNameByClubId(String clubId){
+		String clubName = null;
+		Connection conn = DBUtil.getConnection();
+		String sql = "select * from dbo.T_Club where Id = ?";
+		try{
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, clubId);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+				clubName = rs.getString("ClubName");
+			}
+			rs.close();
+			ps.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			DBUtil.closeConnection(conn);
+		}
+		return clubName;
+	}
 }

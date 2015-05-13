@@ -18,7 +18,7 @@ public class UserDao {
 		String sql = "select Id from dbo.T_Users where Account = ?";
 		try{
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(0, account);
+			ps.setString(1, account);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()){
 				mark = true;
@@ -77,7 +77,7 @@ public class UserDao {
 		String sql = "select * from dbo.T_Users where Account = ? and Password = ?";
 		try{
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1,account);
+			ps.setString(1, account);
 			ps.setString(2, password);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()){
@@ -102,14 +102,14 @@ public class UserDao {
 		String sql = "insert into dbo.T_Users(Id, Account, Password, Name) values(NEWID(),?,?,?)";
 		try{
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(0, user.getAccount());
-			ps.setString(1, user.getPassword());
-			ps.setString(2, user.getName());
+			ps.setString(1, user.getAccount());
+			ps.setString(2, user.getPassword());
+			ps.setString(3, user.getName());
 			ps.executeUpdate();
 			ps.close();
-			sql = "select Id from dbo.T_Users where Account = ?";
+			sql = "select * from dbo.T_Users where Account = ?";
 			ps = conn.prepareStatement(sql);
-			ps.setString(0, user.getAccount());
+			ps.setString(1, user.getAccount());
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()){
 				user.setId(rs.getString("Id"));

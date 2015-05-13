@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ page import="java.sql.ResultSet" %>
     <jsp:useBean id="activePage" scope="page" class="org.sjclub.util.Page" />
+    <jsp:useBean id="activeDao" scope="page" class="org.sjclub.dao.ClubActiveDao" />
     <%! 
     	//数据分页
     	int CountPage = 0;
@@ -20,6 +21,7 @@
 <title>社团活动</title>
 <link rel="shortcut icon" href="img/icon.ico">
 <link rel="stylesheet" href="css/global.css">
+<script src="js/jquery.min.js"></script>
 </head>
 <body>
 <!-- 页面头部 -->
@@ -46,7 +48,7 @@
 		CurrPage = Integer.parseInt(strPage);
 	}
 	//定义查询语句
-	String sql = "select * from dbo.T_ClubActive";
+	String sql = "select * from dbo.T_ClubActive order by ActiveEndTime desc";
 	//执行查询结果
 	ResultSet rs = activePage.selectSql(sql);
 	//获取查询结果集中的记录数
@@ -68,13 +70,13 @@
 					<h3 class="title_bg"><%=rs.getString("ActiveHead") %></h3>
 					<div class="active_active_content"><%=rs.getString("ActiveContent") %></div>
 					<p>
-						<a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%>&clubId=<%=rs.getString("ClubId") %> class="button">查看详情</a>
-						<%-- <a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%>&userId=${user.Id } class="button">参加活动</a> --%>
+						<a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%> class="button">查看详情</a>
+						<%-- <a href=ClubActiveServlet?action=addClubActive&activeId=<%=rs.getString("Id") %>&userId=<%if(userIsLogin)%><%=user.getId() %> class="button">参加活动</a> --%>
 					</p>
 					<p>
 						<img src="img/active1.png"><span><%=rs.getString("ActiveEndTime") %></span>
-						<!-- <img src="img/active2.png"><span>地点地点地点</span>
-						<img src="img/active3.png"><span>社团名称社团名称</span> -->
+						<img src="img/active2.png"><span><%=rs.getString("ActivePlace") %></span>
+						<img src="img/active3.png"><span><%=activeDao.getClubNameById(rs.getString("ClubId")) %></span>
 					</p>
 				</div>
 			</div>
@@ -141,7 +143,6 @@
 <!-- 页面底部 -->
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
-<script src="js/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
 	$(".header_nav_ul>li:eq(1)").addClass("header_active")

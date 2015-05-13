@@ -4,6 +4,7 @@
     <%@ page import="java.sql.PreparedStatement" %>
     <%@ page import="java.sql.ResultSet" %>
     <%@ page import="org.sjclub.util.DBUtil" %>
+    <jsp:useBean id="activeDao" scope="page" class="org.sjclub.dao.ClubActiveDao" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +30,6 @@
 	<%
    		//获取active.jsp页面传递的活动id和所属的社团id
 	    String activeId =request.getParameter("activeId");
-	    String clubId = request.getParameter("clubId");
 	    Connection conn = DBUtil.getConnection();
 	    String sql = "select * from dbo.T_ClubActive where Id = ?";
 	    try{
@@ -45,9 +45,12 @@
 			<div><%=rs.getString("ActiveContent") %></div>
 		</div>
 		<div class="activeDetail_info">
-			<p>活动时间：<span><%=rs.getDate("ActiveTime") %></span></p>
-			<!-- <p>活动地点：<span>xxxxx</span></p>
-			<p>举办单位：<span>xxxxxxxxxxx</span><a href="#" class="button">我要参加</a></p> -->
+			<p>活动时间：<span><%=rs.getDate("ActiveEndTime") %></span></p>
+			<p>活动地点：<span><%=rs.getString("ActivePlace") %></span></p>
+			<p>举办单位：<span><%=activeDao.getClubNameById(rs.getString("ClubId")) %></span>
+			<input id="activeId" type="text" class="hidden" value=<%=rs.getString("Id") %>>
+			<input id="userId" type="text" class="hidden" value=<%if(userIsLogin)%><%=user.getId() %>>
+			<input type="submit" class="button" id="addClubActive" value="我要参加"></p>
 		</div>
 	</div>
 	<%
@@ -70,7 +73,24 @@
 <script src="js/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	$(".header_nav_ul>li:eq(1)").addClass("header_active")
+	$(".header_nav_ul>li:eq(1)").addClass("header_active");
+	
+	var activeId = $("#activeId").val();
+	var userId = $("#userId").val();
+	$("#addClubActive").click(function(){
+		$.get("ClubActiveServlet?action=addClubActive&activeId="+activeId+"&userId="+userId,
+				function(data){
+					if(data == "haveAdd"){
+						alert("您已参加了此活动！")
+					}
+					if(data == "ok"){
+						alert("成功参加！")
+					}
+					if(data == "needLogin"){
+						confirm("请先进行登录！");
+					}
+		})
+	})
 })
 </script>
 </body>

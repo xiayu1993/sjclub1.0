@@ -68,12 +68,37 @@
 			<a href="#"><img src="img/search.png"></a>
 		</div>
 		<div class="page_right_content">
-			<h3>其他社团<span>others</span></h3>
-			<p>社团社团社团社团社团</p>
-			<p>社团社团社团社团社团</p>
-			<p>社团社团社团社团社团</p>
-			<p>社团社团社团社团社团</p>
-			<p>社团社团社团社团社团</p>
+			<h3>社团活动<span>actives</span></h3>
+			<%
+				conn = DBUtil.getConnection();
+				sql = "select top 10 * from dbo.T_ClubActive where ClubId = ?";
+				try{
+		    		PreparedStatement ps = conn.prepareStatement(sql);
+		    		ps.setString(1,clubId);
+		    		ResultSet rs = ps.executeQuery();
+		    		if(rs.next()){
+			    	%>
+						<p><a href=activeDetail.jsp?activeId=<%=rs.getString("Id")%>><%=rs.getString("ActiveHead") %></a></p>
+					<%
+						while(rs.next()){
+							%>
+							<p><%=rs.getString("ActiveHead") %></p>
+							<%
+						}
+					//查询结束
+		    		}else{
+		    		%>
+		    			<p>暂无社团活动</p>
+		    		<%
+		    		}
+		    		rs.close();
+		    		ps.close();
+		    	}catch(Exception e){
+		    		e.printStackTrace();
+		    	}finally{
+		    		DBUtil.closeConnection(conn);
+		    	}
+				%>
 		</div>
 	</div>
 	<!-- ./listDetail-right -->

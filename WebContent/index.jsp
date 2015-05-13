@@ -4,6 +4,12 @@
     <%@ page import="java.sql.ResultSet" %>
     <%@ page import="java.sql.Statement" %>
     <%@ page import="org.sjclub.util.DBUtil" %>
+    <%!
+    	Connection conn = null;
+    	String sql = null;
+    	Statement stmt = null;
+    	ResultSet rs = null;
+    %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,25 +39,51 @@
 		<div class="index_show_img">
 			<div class="banner">
 				<ul>
-					<li><img src="img/index/1.jpg"></li>
-					<li><img src="img/index/2.jpg"></li>
-					<li><img src="img/index/3.jpg"></li>
+				<%
+					conn = DBUtil.getConnection();
+					sql = "select * from dbo.T_WebImageMap";
+					try{
+						stmt = conn.createStatement();
+						rs = stmt.executeQuery(sql);
+						while(rs.next()){
+						%>
+							<li><img src=http://sjclub.org/WebManage/WebImageMap/<%=rs.getString("Id") %><%=rs.getString("ImageType") %>></li>
+						<%
+						}
+						rs.close();
+						stmt.close();
+					}catch(Exception e){
+						e.printStackTrace();
+					}finally{
+						DBUtil.closeConnection(conn);
+					}
+				%>
 				</ul>
 			</div>
 		</div>
 		<div class="index_show_popularity">
 			<h3 class="title_bg">校园人气榜<span>popularity</span></h3>
 			<ol>
-				<li>智能小车爱好者协会</li>
-				<li>数学建模协会</li>
-				<li>ERP沙盘协会</li>
-				<li>单车俱乐部</li>
-				<li>西部支教协会</li>
-				<li>“源动力”科研创新社</li>
-				<li>江汉大学广播台</li>
-				<li>手工制作社</li>
-				<li>琅韵志愿者服务团队</li>
-				<li>NAME心理学社</li>
+			
+				<%
+					conn = DBUtil.getConnection();
+					sql = "select * from dbo.T_Club where IsTopTen = 1";
+					try{
+						stmt = conn.createStatement();
+						rs = stmt.executeQuery(sql);
+						while(rs.next()){
+						%>
+							<li><a href=listDetail.jsp?clubId=<%=rs.getString("Id") %>><%=rs.getString("ClubName") %></a></li>
+						<%
+						}
+						rs.close();
+						stmt.close();
+					}catch(Exception e){
+						e.printStackTrace();
+					}finally{
+						DBUtil.closeConnection(conn);
+					}
+				%>
 			</ol>
 		</div>
 	</div>
@@ -62,11 +94,11 @@
 		<h3 class="title_bg">社团活动<span>club activities</span><a href="active.jsp"><span>更多&gt;&gt;</span></a></h3>
 		
 		<%
-			Connection conn = DBUtil.getConnection();
-			String sql = "select top 12 * from dbo.T_ClubActive";
+			conn = DBUtil.getConnection();
+			sql = "select top 12 * from dbo.T_ClubActive order by ActiveEndTime desc";
 			try{
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql);
+				stmt = conn.createStatement();
+				rs = stmt.executeQuery(sql);
 				for(int i=0; i<3; i++){
 					%>
 					<div class="index_active_list">

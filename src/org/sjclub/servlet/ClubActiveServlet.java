@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +36,8 @@ public class ClubActiveServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String action = request.getParameter("action");
 		switch(action){
-			case"index_active_list":getActiveList(request, response);
+			case"index_active_list":getActiveList(request, response);break;
+			case"addClubActive":addClubActive(request, response);break;
 		}
 	}
 
@@ -61,5 +63,25 @@ public class ClubActiveServlet extends HttpServlet {
 		}
 		out.flush();
 		out.close();
+	}
+	
+	/**
+	 * @see HttpServlet#addClubActive(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void addClubActive(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter out = response.getWriter();
+		String activeId = request.getParameter("activeId");
+		String userId = request.getParameter("userId");
+		if(!userId.isEmpty()){
+			if(ClubActiveDao.haveAdd(activeId, userId)){
+				out.print("haveAdd");
+			}else{
+				ClubActiveDao.addClubActive(activeId, userId);
+				out.print("ok");
+			}
+		}else{
+			out.print("needLogin");
+		}
 	}
 }

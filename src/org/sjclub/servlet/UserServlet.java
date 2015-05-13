@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.sjclub.dao.UserDao;
 import org.sjclub.model.User;
@@ -42,8 +43,9 @@ public class UserServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String action = request.getParameter("action");
 		switch(action){
-			case "login":login(request, response);
-			case "register":register(request, response);
+			case "login":login(request, response);break;
+			case "register":register(request, response);break;
+			case "logout":logout(request, response);break;
 		}
 	}
 	
@@ -77,12 +79,31 @@ public class UserServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		if(UserDao.isAccountExist(account)){
-			out.print("用户已存在");
+			out.print("exist");
 		}else{
-			User user = new User(account, password, name);
+			User user = new User();
+			user.setAccount(account);
+			user.setName(name);
+			user.setPassword(password);
 			user = UserDao.register(user);
-			request.getSession().setAttribute("user",user);
-			UserDao.register(user);
+			request.getSession().setAttribute("userinfo",user);
+			out.print("ok");
+		}
+	}
+	
+	/**
+	 * @see HttpServlet#logout(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		//获取用户对象
+		User user = (User)session.getAttribute("userinfo");
+		//判断用户是否有效
+		if(user != null){
+			//将用户对象逐出Session
+			session.removeAttribute("userinfo");
+			response.setHeader("refresh", "0;URL=index.jsp");
 		}
 	}
 

@@ -22,35 +22,35 @@
 	<div class="content_left">
 		<h3 class="title_bg title_center">欢迎注册</h3>
 		<div class="form-horizontal">
-			<p class="form-tip" style="display:block">暂时不提供注册功能！</p>
-			<!-- <div class="form-group">
+			<p class="form-tip"></p>
+			<div class="form-group">
 				<label for="account">邮箱：</label>
 				<div>
-					<input type="text" name="account" id="account" placeholder="Email">
+					<input type="text" name="account" id="register-account" placeholder="Email">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="name">昵称：</label>
 				<div>
-					<input type="text" name="name" id="name" placeholder="Name">
+					<input type="text" name="name" id="register-name" placeholder="Name">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="password">密码：</label>
 				<div>
-					<input type="password" name="password" id="password" placeholder="password">
+					<input type="password" name="password" id="register-password" placeholder="password">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="repassword">确认密码：</label>
 				<div>
-					<input type="password" name="repassword" id="repassword" placeholder="Confirm password">
+					<input type="password" name="repassword" id="register-repassword" placeholder="Confirm password">
 				</div>
 			</div>
 			<div class="form-group">
 				<input type="reset" value="重置" id="reset">
-				<input type="submit" value="注册" id="submit">
-			</div> -->
+				<input type="submit" value="注册" id="register-submit">
+			</div>
 		</div>
 	</div>
 	
@@ -58,7 +58,13 @@
 		<div class="page_right_content lr_explain">
 			<h3>特别说明</h3>
 			<p>主页君很开心看到大家来注册哟</p><br>
-			<p>大家可以起个萌萌哒的名字</p><br>
+			<p>大家可以起个萌萌哒的名字</p>
+			<p>一起调戏主页君</p>
+			<p>一起快乐的玩耍</p>
+			<p>参加我们的社团活动</p><br>
+			<p>最后</p>
+			<p>么么哒</p>
+			<p>and 谢谢哒、~~~</p>
 		</div>
 	</div>
 </div>
@@ -68,43 +74,10 @@
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
 <script src="js/jquery.min.js"></script>
+<script src="js/validate.js"></script>
 <script>
 $(document).ready(function(){
 	$(".footer").addClass("footer_fixed");
-	
-	var account =  $("#account");
-	var name = $("#name");
-	var password = $("#password");
-	var repassword = $("#repassword");
-	var tip = $(".form-tip");
-	var reset = $("#reset");
-	var submit = $("#submit");
-	
-	reset.click(function(){
-		account.val("");
-		password.val("");
-		name.val("");
-		repassword.val("");
-		tip.css("display", "none").html("");
-	})
-	submit.click(function(){
-		$.post("UserServlet",
-				{
-					action:"register",
-					account:account.val(),
-					password:password.val(),
-					name:name.val()
-				},
-				function(data){
-					if("ok"){
-						
-					}
-					if("error"){
-						
-					}
-				})
-	})
-	
 })
 </script>
 </body>

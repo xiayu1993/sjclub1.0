@@ -28,7 +28,6 @@ public class Page {
 		return rs;
 	}
 	
-	/*分栏显示*/
 	
 	/*关闭数据库资源*/
 	public void closeAll(){

@@ -45,6 +45,9 @@ content: " ";
 clear: both;
 height: 0;
 }
+.hidden{
+	display:none;
+}
 
 /*****************************
 * 页面css
@@ -143,7 +146,7 @@ body{
 	margin-bottom:20px;
 }
 .search>input{
-	width:268px;
+	width:264px;
 	height:24px;
 	line-height:25px;
 	color:#ccc;
@@ -178,6 +181,9 @@ body{
 	font-size:90%;
 	margin:15px 0;
 }
+.page_right_content>p>a{
+	color:#ff4800;
+}
 
 
 
@@ -209,6 +215,9 @@ body{
 	height:20px;
 	margin:8px auto;
 	font-size:90%;
+}
+.index_show_popularity>ol>li>a{
+	color:#ff4800;
 }
 
 /* 社团活动 */
@@ -319,16 +328,20 @@ body{
 .active_active_content{
 	height:132px;
 	max-height:132px;
+	padding-left:15px;
 	overflow:hidden;
 }
-.active_active>div>p>a:last-child{
-	margin-left:190px;
+.active_active>div>p{
+	margin-top:4px;
 }
 .active_active>div>p:last-child{
-	margin-top:10px;
+	margin-top:9px;
 	font-size:80%;
 	color:#ff4800;
 }
+/*.active_active>div>p>a:last-child{
+	margin-left:190px;
+}*/
 .active_active>div>p:last-child span{
 	position:relative;
 	top:-5px;
@@ -498,7 +511,7 @@ body{
 }
 .activeDetail_content>h2{
 	text-align:center;
-	margin-bottom:5px;
+	margin-bottom:10px;
 }
 .activeDetail_content>p{
 	font-size:90%;
@@ -508,14 +521,15 @@ body{
 	margin-top:20px;
 }
 .activeDetail_info>p{
-	margin:10px 0;
-	padding-bottom:5px;
+	margin:15px 0;
+	padding-bottom:7px;
 	font-size:80%;
 	border-bottom:1px dashed #333;
 }
-.activeDetail_info a{
+.activeDetail_info input:last-child{
 	float:right;
 	margin-right:20px;
+	cursor:pointer;
 	
 	position:relative;
 	top:-5px;

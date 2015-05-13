@@ -26,18 +26,18 @@
 			<div class="form-group">
 				<label for="account">邮箱：</label>
 				<div>
-					<input type="text" name="account" id="account" placeholder="Email">
+					<input type="text" name="account" id="login-account" placeholder="Email">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="password">密码：</label>
 				<div>
-					<input type="password" name="password" id="password" placeholder="Password">
+					<input type="password" name="password" id="login-password" placeholder="Password">
 				</div>
 			</div>
 			<div class="form-group">
 				<input type="reset" value="重置" id="reset">
-				<input type="submit" value="登录" id="submit">
+				<input type="submit" value="登录" id="login-submit">
 			</div>
 		</div>
 	</div>
@@ -46,7 +46,13 @@
 		<div class="page_right_content lr_explain">
 			<h3>特别说明</h3>
 			<p>主页君很开心看到大家来注册哟</p><br>
-			<p>大家可以起个萌萌哒的名字</p><br>
+			<p>大家可以起个萌萌哒的名字</p>
+			<p>一起调戏主页君</p>
+			<p>一起快乐的玩耍</p>
+			<p>参加我们的社团活动</p><br>
+			<p>最后</p>
+			<p>么么哒</p>
+			<p>and 谢谢哒、~~~</p>
 		</div>
 	</div>
 </div>
@@ -56,40 +62,10 @@
 <%@include file="globalpart/footer.jsp" %>
 <!-- ./页面底部 -->
 <script src="js/jquery.min.js"></script>
+<script src="js/validate.js"></script>
 <script>
 $(document).ready(function(){
 	$(".footer").addClass("footer_fixed");
-	
-	var acc = $("#account");
-	var pas = $("#password");
-	var tip = $(".form-tip");
-	var reset = $("#reset");
-	var submit = $("#submit");
-	
-	//重置
-	reset.click(function(){
-		acc.val("");
-		pas.val("");
-		tip.css("display", "none").html("");
-	})
-	
-	submit.click(function(){
-		$.post("UserServlet",
-				{	
-					action:"login",
-					account:acc.val(),
-					password:pas.val()
-				},
-				function(data){
-					if(data == "ok"){
-						window.location.href="index.jsp";
-					}
-					if(data == "error"){
-						tip.css("display","block").html("邮箱或密码错误！");
-					}
-				}	
-			)
-	})
 })
 </script>
 </body>

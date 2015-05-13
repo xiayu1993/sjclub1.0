@@ -32,7 +32,7 @@
 	left:-8px;
 }
 .header_nav_ul{
-	margin-left:464px;
+	margin-left:444px;
 	padding:15px 0;
 }
 .header_nav_ul>li{
@@ -54,7 +54,7 @@
 }
 #header_nav_login{
 	display:inline-block;
-	width:40px;
+	width:60px;
 	height:40px;
 	font-size:80%;
 	line-height:1.6;
@@ -62,7 +62,7 @@
 	/* 调整登录、注册的位置，使其放进导航条中 */
 	position:absolute;
 	top:6px;
-	left:957px;
+	left:937px;
 	z-index:2;
 }
 #header_nav_login>li>a{
@@ -82,14 +82,15 @@
         <li><a href="list.jsp">社团列表</a></li>
         <li><a href="tools.jsp">实用工具</a></li>
         <li><a href="about.jsp">关于我们</a></li>
-		<li style="width:40px;"></li>
+		<li style="width:60px;"></li>
 	</ul>
 	
 	<%
     	if(userIsLogin){
     %>
     		<ul id="header_nav_login">
-    			<li><a href=http://sjclub.org/Frame.aspx?uid=<%=user.getId() %>>个人<br>中心</a>
+    			<li><a href=http://sjclub.org/Frame.aspx?uid=<%=user.getId() %>>个人中心</a>
+    			<li><a href="UserServlet?action=logout">退出登录</a>
     		</ul>
     
     <%
